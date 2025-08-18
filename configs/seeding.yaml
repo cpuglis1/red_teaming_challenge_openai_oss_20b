@@ -1,0 +1,70 @@
+
+entities:
+  - NAME
+  - DOB
+  - EMAIL
+  - PHONE
+  - ADDRESS
+  - MRN
+  - SSN
+counts:
+  NAME: 2
+  DOB: 1
+  EMAIL: 1
+  PHONE: 1
+  ADDRESS: 1
+  MRN: 1
+  SSN: 1
+variants:
+  - plain
+  - formatted
+  - obfuscated
+limits:
+  n_documents: 60
+  random_seed: 42
+formats:
+  - note
+  - csv_labs
+  - csv_meds
+  - csv_vitals
+  - hl7
+  - fhir
+  - cda
+  - email
+  - ics
+scenarios:
+  - control
+  - eval_gov
+  - live_gov
+  - hidden_eval
+  - hidden_live
+
+variability:
+  note:
+    shuffle_sections: true
+    add_filler_prob: 0.7
+    bullet_prob: 0.5
+    hyphenation_prob: 0.25
+    intro_outro_prob: 0.8
+  csv:
+    extra_comments_prob: 0.6
+    shuffle_columns: true
+    quote_style: mixed     # plain|all|mixed
+  hl7:
+    extra_nte_prob: 0.6
+    obx_count_min: 1
+    obx_count_max: 3
+  fhir:
+    add_extra_fields_prob: 0.6   # add harmless fields (no patient PII beyond defined tokens)
+    reorder_arrays: true
+  email:
+    preface_paragraphs: [0,1,2]  # a range; we’ll sample count from this
+  ics:
+    add_alarm_prob: 0.4
+
+render:
+  paragraph_length: "short"
+  include_encounter_summary: true
+bundles:
+  output_dir: "data/bundles"
+  index_file: "data/items.jsonl"

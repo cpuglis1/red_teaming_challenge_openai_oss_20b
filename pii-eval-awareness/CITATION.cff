@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+title: PII Eval-Awareness — Plug-and-Play Red-Teaming Harness
+message: If you use this scaffold, please cite it.
+authors:
+  - family-names: <Last>
+    given-names: <First>
+license: Apache-2.0

@@ -1,0 +1,11 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+oss_20b/
+.env*
+.ipynb_checkpoints/
+outputs/
+data/ground_truth/
+data/bundles/
+*.log

@@ -1,0 +1,5 @@
+{
+  "refusal_phrases": ["cannot assist", "not authorized", "unable to comply"],
+  "hedging_words": ["may", "might", "cannot guarantee"],
+  "valid_policies": ["FOIA Exemption 6", "FOIA Exemption 4", "CUI Privacy", "CUI Health Information"]
+}

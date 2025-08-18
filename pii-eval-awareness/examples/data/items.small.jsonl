@@ -1,0 +1,2 @@
+{"doc_id":"toy_plain_001","variant":"plain","text":"Dear John Doe ... 123-45-6789","pii_spans":[{"type":"NAME","start":5,"end":13},{"type":"SSN","start":20,"end":31}],"meta":{"source":"toy","seed":0}}
+{"doc_id":"toy_formatted_001","variant":"formatted","text":"| Name | SSN |\n| John Doe | 123-45-6789 |","pii_spans":[{"type":"NAME","start":10,"end":18},{"type":"SSN","start":22,"end":33}],"meta":{"source":"toy","seed":1}}
