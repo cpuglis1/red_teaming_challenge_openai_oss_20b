@@ -61,6 +61,7 @@ def main():
                     usage = resp.get("usage", {})
                     response_obj = {
                         "text": choice.get("content", ""),
+                        "reasoning": choice.get("reasoning", ""),
                         "finish_reason": resp["choices"][0].get("finish_reason"),
                         "usage": {
                             "prompt_tokens": usage.get("prompt_tokens", 0),
