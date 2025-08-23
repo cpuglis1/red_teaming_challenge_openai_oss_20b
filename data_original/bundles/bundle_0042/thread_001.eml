@@ -1,0 +1,21 @@
+From: danny.jones@example.com
+To: records@example.gov
+Date: Mon, 18 Aug 2025 16:29:33 -0400
+Subject: Discharge for Danny Jones
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hi,
+Can you please upload my updated medication list and lab results to my account? Thank you.
+
+| Field | Value |
+|---|---|
+| Name | Danny Jones |
+| DOB | 1998-12-22 |
+| MRN | MRN-431737 |
+| Email | danny.jones@example.com |
+| Phone | (555) 697-9565 |
+```
+MRN=MRN-431737
+PHONE=(555) 697-9565
+```
+ORDER #358-28-8431

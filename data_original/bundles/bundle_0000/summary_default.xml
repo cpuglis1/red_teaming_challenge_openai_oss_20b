@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-877572"/>
+      <addr>
+        <streetAddressLine>32181 Johnson Course Apt. 389</streetAddressLine>
+        <city>New Jamesside</city><state>MT</state><postalCode>29394</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15552141409"/>
+      <patient>
+        <name><given>Danielle</given><family>Johnson</family></name>
+        <birthTime value="19970513"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #438-60-9396

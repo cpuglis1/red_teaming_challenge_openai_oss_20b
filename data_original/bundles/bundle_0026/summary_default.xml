@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-359947"/>
+      <addr>
+        <streetAddressLine>214 Davis Terrace Apt. 433</streetAddressLine>
+        <city>North Brandon</city><state>NJ</state><postalCode>80621</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15555622982"/>
+      <patient>
+        <name><given>Scott</given><family>Lewis</family></name>
+        <birthTime value="19860607"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #862-83-5713

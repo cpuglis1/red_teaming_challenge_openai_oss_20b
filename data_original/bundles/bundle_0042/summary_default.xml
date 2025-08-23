@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-431737"/>
+      <addr>
+        <streetAddressLine>90229 Miller Gateway Apt. 869</streetAddressLine>
+        <city>Port Alexandra</city><state>NV</state><postalCode>58529</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15556979565"/>
+      <patient>
+        <name><given>Danny</given><family>Jones</family></name>
+        <birthTime value="19981222"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #184-47-6103

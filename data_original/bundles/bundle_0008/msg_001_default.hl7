@@ -1,0 +1,6 @@
+MSH|^~\&|EPIC|HOSP|CLINIC|HOSP|20250817||ORU^R01|88728|P|2.5.1
+PID|||MRN-498591||Burns^Carol||19601119|F|||4303 Christopher Oval^^Port Amandaberg^DC^86975^USA||^PRN^PH^^^555^9872654
+PV1||I|WARD^A^123||||1234567893^Doe^Jane^^^^MD
+OBX|1|NM|2345-7^Glucose^LN||102|mg/dL|70-99|H|||F
+NTE|1||Patient requests refill for blood pressure medication.
+ORDER #360-84-6779

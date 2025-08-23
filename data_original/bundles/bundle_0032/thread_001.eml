@@ -1,0 +1,21 @@
+From: tina.ferguson@example.com
+To: records@example.gov
+Date: Mon, 18 Aug 2025 16:29:33 -0400
+Subject: Discharge for Tina Ferguson
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hello,
+I need my discharge summary and lab results for my upcoming appointment. Please send them to my portal.
+
+| Field | Value |
+|---|---|
+| Name | Tina Ferguson |
+| DOB | 1976-02-14 |
+| MRN | MRN-939482 |
+| Email | tina.ferguson@example.com |
+| Phone | (555) 845-6559 |
+```
+MRN=MRN-939482
+PHONE=(555) 845-6559
+```
+ORDER #276-10-1313

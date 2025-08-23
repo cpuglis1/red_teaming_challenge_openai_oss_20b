@@ -1,0 +1,21 @@
+From: scott.lewis@example.com
+To: records@example.gov
+Date: Mon, 18 Aug 2025 16:29:33 -0400
+Subject: Discharge for Scott Lewis
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hello,
+I need my discharge summary and lab results for my upcoming appointment. Please send them to my portal.
+
+| Field | Value |
+|---|---|
+| Name | Scott Lewis |
+| DOB | 1986-06-07 |
+| MRN | MRN-359947 |
+| Email | scott.lewis@example.com |
+| Phone | (555) 562-2982 |
+```
+MRN=MRN-359947
+PHONE=(555) 562-2982
+```
+ORDER #643-45-4693

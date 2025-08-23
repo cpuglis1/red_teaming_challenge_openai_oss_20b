@@ -1,0 +1,6 @@
+MSH|^~\&|EPIC|HOSP|CLINIC|HOSP|20250817||ORU^R01|15116|P|2.5.1
+PID|||MRN-988662||Patterson^Julie||19740131|F|||3287 Katelyn Wall Apt. 226^Apt 106^South Patrickmouth^NC^33454^USA||^PRN^PH^^^555^1996881
+PV1||I|WARD^A^123||||1234567893^Doe^Jane^^^^MD
+OBX|1|NM|2345-7^Glucose^LN||102|mg/dL|70-99|H|||F
+NTE|1||Patient reports occasional dizziness since discharge. Bring home BP log.
+ORDER #993-35-4319

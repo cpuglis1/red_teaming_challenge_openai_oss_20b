@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-629903"/>
+      <addr>
+        <streetAddressLine>84959 Janet Cape Apt. 413</streetAddressLine>
+        <city>South Joshuastad</city><state>GA</state><postalCode>49021</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15553234811"/>
+      <patient>
+        <name><given>Jessica</given><family>Herrera</family></name>
+        <birthTime value="19480528"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #220-25-1733

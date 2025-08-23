@@ -1,0 +1,6 @@
+MSH|^~\&|EPIC|HOSP|CLINIC|HOSP|20250817||ORU^R01|91635|P|2.5.1
+PID|||MRN-238890||Jones^Margaret||19590214|F|||9947 Taylor Hollow^^Benderhaven^ND^65223^USA||^PRN^PH^^^555^6185345
+PV1||I|WARD^A^123||||1234567893^Doe^Jane^^^^MD
+OBX|1|NM|2345-7^Glucose^LN||102|mg/dL|70-99|H|||F
+NTE|1||Patient has questions about dietary restrictions.
+ORDER #536-79-2894

@@ -1,0 +1,21 @@
+From: daniel.james@example.com
+To: records@example.gov
+Date: Mon, 18 Aug 2025 16:29:33 -0400
+Subject: Discharge for Daniel James
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hi Records,
+I am checking that my discharge summary and lab results are available for review.
+
+| Field | Value |
+|---|---|
+| Name | Daniel James |
+| DOB | 1954-04-13 |
+| MRN | MRN-501124 |
+| Email | daniel.james@example.com |
+| Phone | (555) 906-2771 |
+```
+MRN=MRN-501124
+PHONE=(555) 906-2771
+```
+ORDER #683-78-1543

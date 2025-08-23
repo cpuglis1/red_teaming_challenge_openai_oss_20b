@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-197793"/>
+      <addr>
+        <streetAddressLine>3193 Heidi Hollow Apt. 905</streetAddressLine>
+        <city>Stanleyland</city><state>NY</state><postalCode>85375</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15556531241"/>
+      <patient>
+        <name><given>Anthony</given><family>Collins</family></name>
+        <birthTime value="19980704"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #520-58-3943

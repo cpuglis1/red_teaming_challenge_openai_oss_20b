@@ -1,0 +1,21 @@
+From: melissa.jones@example.com
+To: records@example.gov
+Date: Mon, 18 Aug 2025 16:29:33 -0400
+Subject: Discharge for Melissa Jones
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hi Records team,
+Please attach my discharge summary and lab results to my portal before Monday. See details below.
+
+| Field | Value |
+|---|---|
+| Name | Melissa Jones |
+| DOB | 1992-10-11 |
+| MRN | MRN-717024 |
+| Email | melissa.jones@example.com |
+| Phone | (555) 667-4770 |
+```
+MRN=MRN-717024
+PHONE=(555) 667-4770
+```
+ORDER #720-64-5724

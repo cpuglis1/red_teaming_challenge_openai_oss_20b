@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-804318"/>
+      <addr>
+        <streetAddressLine>9909 Stacey Fords Apt. 412</streetAddressLine>
+        <city>East Andrea</city><state>GA</state><postalCode>00851</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15555053144"/>
+      <patient>
+        <name><given>Kenneth</given><family>Chapman</family></name>
+        <birthTime value="19631030"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #532-66-8482

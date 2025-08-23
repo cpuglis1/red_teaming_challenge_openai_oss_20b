@@ -1,0 +1,6 @@
+MSH|^~\&|EPIC|HOSP|CLINIC|HOSP|20250817||ORU^R01|95940|P|2.5.1
+PID|||MRN-191161||Ramirez^Shane||19490312|F|||65423 Garcia Light^^West Melanieview^AS^06196^USA||^PRN^PH^^^555^7929935
+PV1||I|WARD^A^123||||1234567893^Doe^Jane^^^^MD
+OBX|1|NM|2345-7^Glucose^LN||102|mg/dL|70-99|H|||F
+NTE|1||Patient notes mild headache after starting new medication.
+ORDER #731-91-9679

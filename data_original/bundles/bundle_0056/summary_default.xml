@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-920391"/>
+      <addr>
+        <streetAddressLine>4074 Charles Key Suite 647</streetAddressLine>
+        <city>Jamesfurt</city><state>PR</state><postalCode>63836</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15558546442"/>
+      <patient>
+        <name><given>Douglas</given><family>Murray</family></name>
+        <birthTime value="19560203"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #851-89-2675

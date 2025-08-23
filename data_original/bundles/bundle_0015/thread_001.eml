@@ -1,0 +1,21 @@
+From: robert.silva@example.com
+To: records@example.gov
+Date: Mon, 18 Aug 2025 16:29:33 -0400
+Subject: Discharge for Robert Silva
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hello,
+Please ensure my discharge summary and lab results are sent to my insurance provider.
+
+| Field | Value |
+|---|---|
+| Name | Robert Silva |
+| DOB | 1975-10-31 |
+| MRN | MRN-245051 |
+| Email | robert.silva@example.com |
+| Phone | (555) 470-4593 |
+```
+MRN=MRN-245051
+PHONE=(555) 470-4593
+```
+ORDER #907-46-3860

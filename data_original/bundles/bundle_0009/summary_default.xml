@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-802729"/>
+      <addr>
+        <streetAddressLine>963 Jennifer Locks Suite 787</streetAddressLine>
+        <city>East Jeffreymouth</city><state>AK</state><postalCode>77611</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15554634432"/>
+      <patient>
+        <name><given>Thomas</given><family>Pierce</family></name>
+        <birthTime value="19730318"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #371-83-9858

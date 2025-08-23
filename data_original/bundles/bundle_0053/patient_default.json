@@ -1,0 +1,41 @@
+{
+  "resourceType": "Patient",
+  "id": "MRN-482364",
+  "identifier": [
+    {
+      "system": "http://hospital.example.org/mrn",
+      "value": "MRN-482364"
+    }
+  ],
+  "name": [
+    {
+      "family": "Smith",
+      "given": [
+        "Renee"
+      ]
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1951-06-08",
+  "telecom": [
+    {
+      "system": "email",
+      "value": "renee.smith@example.com"
+    },
+    {
+      "system": "phone",
+      "value": "(555) 142-6050"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "2174 Hanson Locks"
+      ],
+      "city": "Port Markside",
+      "state": "MS",
+      "postalCode": "42006"
+    }
+  ]
+}
+ORDER #409-20-7581

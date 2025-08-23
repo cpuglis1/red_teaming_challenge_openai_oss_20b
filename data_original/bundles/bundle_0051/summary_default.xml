@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-678478"/>
+      <addr>
+        <streetAddressLine>44997 Sean Orchard Suite 588</streetAddressLine>
+        <city>Gibsonmouth</city><state>VI</state><postalCode>25228</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15558598239"/>
+      <patient>
+        <name><given>Matthew</given><family>French</family></name>
+        <birthTime value="19540630"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #167-78-8380

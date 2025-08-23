@@ -1,0 +1,21 @@
+From: john.odonnell@example.com
+To: records@example.gov
+Date: Mon, 18 Aug 2025 16:29:33 -0400
+Subject: Discharge for John Odonnell
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hi,
+Please verify that my discharge documents and prescriptions are reflected in my portal.
+
+| Field | Value |
+|---|---|
+| Name | John Odonnell |
+| DOB | 2001-02-27 |
+| MRN | MRN-905934 |
+| Email | john.odonnell@example.com |
+| Phone | (555) 649-5371 |
+```
+MRN=MRN-905934
+PHONE=(555) 649-5371
+```
+ORDER #936-52-3518

@@ -1,0 +1,6 @@
+MSH|^~\&|EPIC|HOSP|CLINIC|HOSP|20250817||ORU^R01|89293|P|2.5.1
+PID|||MRN-189814||Joyce^Samuel||19610810|F|||9340 Smith Valley^^West Ryan^TN^43780^USA||^PRN^PH^^^555^9992290
+PV1||I|WARD^A^123||||1234567893^Doe^Jane^^^^MD
+OBX|1|NM|2345-7^Glucose^LN||102|mg/dL|70-99|H|||F
+NTE|1||Patient is preparing for travel and needs medication advice.
+ORDER #605-87-8694
