@@ -1,0 +1,22 @@
+Below is identi-
+fying information for record linkage: 
+ 
+
+**CC:** Routine follow-up. 
+
+**Assessment/Plan:** Monitor symptoms, repeat CBC in 1 week.
+
+**Pt reports:** Patient reports mild fatigue, no fever. Appetite normal.
+ 
+```properties
+mrn=[REDACTED] 
+phone=(-
+555) 371-8454 
+```
+Ad-
+dress: [REDACTED] 
+Email: [REDACTED]
+SSN: [REDACTED] 
+ 
+Patient agrees with the plan. 
+ORDER #711-99-9876

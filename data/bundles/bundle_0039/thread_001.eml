@@ -1,0 +1,21 @@
+From: jeffrey.holt@example.com
+To: records@example.gov
+Date: Sat, 23 Aug 2025 16:01:00 -0400
+Subject: Discharge for Jeffrey Holt
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hello team,
+I am requesting a copy of my discharge summary and recent lab work for my records.
+
+| Field | Value |
+|---|---|
+| Name | Jeffrey Holt |
+| DOB | 1945-02-16 |
+| MRN | MRN-627276 |
+| Email | jeffrey.holt@example.com |
+| Phone | (555) 151-8811 |
+```
+MRN=MRN-627276
+PHONE=(555) 151-8811
+```
+ORDER #489-40-8202

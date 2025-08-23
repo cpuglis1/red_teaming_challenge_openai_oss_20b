@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-230889"/>
+      <addr>
+        <streetAddressLine>184 Rodriguez Mews</streetAddressLine>
+        <city>South Aaron</city><state>VA</state><postalCode>94830</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15555709785"/>
+      <patient>
+        <name><given>Tasha</given><family>Valencia</family></name>
+        <birthTime value="20050619"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #385-87-9012

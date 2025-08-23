@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-399105"/>
+      <addr>
+        <streetAddressLine>7379 Rogers Park</streetAddressLine>
+        <city>Hunterborough</city><state>MI</state><postalCode>34363</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15553718454"/>
+      <patient>
+        <name><given>Melissa</given><family>Rivas</family></name>
+        <birthTime value="19750110"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #869-18-4928

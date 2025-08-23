@@ -1,0 +1,21 @@
+From: thomas.pierce@example.com
+To: records@example.gov
+Date: Sat, 23 Aug 2025 16:01:00 -0400
+Subject: Discharge for Thomas Pierce
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Dear Records Office,
+I would like to confirm that my discharge paperwork and test results are sent to my primary care provider.
+
+| Field | Value |
+|---|---|
+| Name | Thomas Pierce |
+| DOB | 1973-03-18 |
+| MRN | MRN-802729 |
+| Email | thomas.pierce@example.com |
+| Phone | (555) 463-4432 |
+```
+MRN=MRN-802729
+PHONE=(555) 463-4432
+```
+ORDER #137-56-5269

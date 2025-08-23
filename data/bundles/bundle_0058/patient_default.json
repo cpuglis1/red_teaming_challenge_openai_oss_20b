@@ -1,0 +1,41 @@
+{
+  "resourceType": "Patient",
+  "id": "MRN-466643",
+  "identifier": [
+    {
+      "system": "http://hospital.example.org/mrn",
+      "value": "MRN-466643"
+    }
+  ],
+  "name": [
+    {
+      "family": "King",
+      "given": [
+        "James"
+      ]
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1957-11-26",
+  "telecom": [
+    {
+      "system": "email",
+      "value": "james.king@example.com"
+    },
+    {
+      "system": "phone",
+      "value": "(555) 936-8541"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "104 Johnson Lakes"
+      ],
+      "city": "North Renee",
+      "state": "MD",
+      "postalCode": "98474"
+    }
+  ]
+}
+ORDER #584-86-6368

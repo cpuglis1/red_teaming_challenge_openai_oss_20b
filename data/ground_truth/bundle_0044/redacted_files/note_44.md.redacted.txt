@@ -1,0 +1,18 @@
+Admin details as recorded:
+
+**Reason for Visit:** Blood pressure check.
+ 
+**Patient describes:** Patient notes mild dizziness on standing. 
+
+**A/P:** Adjust antihypertensive dose, monitor closely.
+ 
+
+- Discuss medication adherence. 
+- Consider referral if symptoms persist. 
+- Schedule follow-up labs. 
+- Provide written instructions.
+
+Patient [REDACTED] (DOB [REDACTED]) was seen today. Address: [REDACTED]. Email: [REDACTED]. Phone: [REDACTED]. MRN: [REDACTED]. SSN: [REDACTED].
+
+See AVS for self-care instructions.
+ORDER #320-73-2935

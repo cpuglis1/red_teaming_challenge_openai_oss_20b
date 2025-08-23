@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-982554"/>
+      <addr>
+        <streetAddressLine>8692 Michelle Union</streetAddressLine>
+        <city>South Angel</city><state>WA</state><postalCode>44041</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15552085889"/>
+      <patient>
+        <name><given>Jason</given><family>Wright</family></name>
+        <birthTime value="19850718"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #441-96-7788

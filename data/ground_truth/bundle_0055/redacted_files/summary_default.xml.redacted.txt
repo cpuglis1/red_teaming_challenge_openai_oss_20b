@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="[REDACTED]"/>
+      <addr>
+        <streetAddressLine>[REDACTED]</streetAddressLine>
+        <city>[REDACTED]</city><state>[REDACTED]</state><postalCode>[REDACTED]</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:[REDACTED]"/>
+      <patient>
+        <name><given>[REDACTED]</given><family>[REDACTED]</family></name>
+        <birthTime value="[REDACTED]"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #824-98-6117

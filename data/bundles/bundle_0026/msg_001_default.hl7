@@ -1,0 +1,6 @@
+MSH|^~\&|EPIC|HOSP|CLINIC|HOSP|20250817||ORU^R01|15145|P|2.5.1
+PID|||MRN-359947||Lewis^Scott||19860607|F|||214 Davis Terrace Apt. 433^Apt 106^North Brandon^NJ^80621^USA||^PRN^PH^^^555^5622982
+PV1||I|WARD^A^123||||1234567893^Doe^Jane^^^^MD
+OBX|1|NM|2345-7^Glucose^LN||102|mg/dL|70-99|H|||F
+NTE|1||Patient reports improved energy since last visit.
+ORDER #480-63-6942

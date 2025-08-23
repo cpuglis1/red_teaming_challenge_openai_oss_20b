@@ -1,0 +1,23 @@
+Below is ident-
+ifying information for record linkage:
+ 
+**CC:** Lab follow-up.
+
+
+**Patient reports:** Patient brought home glucose log, values stable.
+
+
+**Assessment & Plan:** Maintain diet, repeat labs in 2 weeks. 
+ 
+Questions answered to satisfaction.
+
+```ini
+MRN=[REDACTED]
+PHONE=[REDACTED] 
+``` 
+Address: [REDACTED] 
+Email: [REDACTED] 
+SSN: [REDACTED]
+ 
+Records forwarded to PCP. 
+ORDER #792-93-9333

@@ -1,0 +1,6 @@
+MSH|^~\&|EPIC|HOSP|CLINIC|HOSP|20250817||ORU^R01|92316|P|2.5.1
+PID|||MRN-672092||Allen^Tina||19461001|F|||60576 Mcneil Turnpike Apt. 702^Apt 106^Mollymouth^CT^69438^USA||^PRN^PH^^^555^8073442
+PV1||I|WARD^A^123||||1234567893^Doe^Jane^^^^MD
+OBX|1|NM|2345-7^Glucose^LN||102|mg/dL|70-99|H|||F
+NTE|1||Patient requests clarification on medication timing.
+ORDER #488-11-4892

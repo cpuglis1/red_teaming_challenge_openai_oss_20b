@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-930555"/>
+      <addr>
+        <streetAddressLine>1354 Samuel Plains</streetAddressLine>
+        <city>Cherylhaven</city><state>AL</state><postalCode>88039</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15552563621"/>
+      <patient>
+        <name><given>Amanda</given><family>Wagner</family></name>
+        <birthTime value="19491101"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #659-22-5072

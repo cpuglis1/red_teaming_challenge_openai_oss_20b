@@ -1,0 +1,6 @@
+Vital,Value,Unit
+BP,120/80,mmHg
+HR,72,bpm
+Temp,98.6,F
+# Contact: [REDACTED] | [REDACTED]
+ORDER #198-78-6868

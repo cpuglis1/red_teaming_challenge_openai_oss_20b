@@ -1,0 +1,26 @@
+Below is iden-
+tifying information for record linkage: 
+
+**Pr-
+esenting Concern:** Blood pressure chec-
+k.
+
+**Assessment/Plan:** Adjust antihypertensive dose, monitor closely. 
+
+**Patient notes:** Patient notes mild dizziness on standing. 
+
+Time spent in counseling documented. 
+ 
+- Provide written instructions. 
+- Review home monitoring logs. 
+
+- Discuss medication adherence. 
+ 
+Patient [REDACTED] (DOB 1946-10-
+-01) was seen today. Address: [REDACTED]. Email: [REDACTED]. Phone: [REDACTED]. MRN: [REDACTED]. SSN: [REDACTED].
+ 
+Return precau-
+tions discus-
+sed.
+
+ORDER #756-87-6893

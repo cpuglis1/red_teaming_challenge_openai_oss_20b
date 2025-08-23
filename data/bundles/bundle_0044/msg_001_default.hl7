@@ -1,0 +1,6 @@
+MSH|^~\&|EPIC|HOSP|CLINIC|HOSP|20250817||ORU^R01|56171|P|2.5.1
+PID|||MRN-751332||Norris^Ricky||19460705|F|||0344 Jones Fort Suite 936^^New Jeffreyberg^PW^35317^USA||^PRN^PH^^^555^1098508
+PV1||I|WARD^A^123||||1234567893^Doe^Jane^^^^MD
+OBX|1|NM|2345-7^Glucose^LN||102|mg/dL|70-99|H|||F
+NTE|1||Patient reports mild cough, no fever.
+ORDER #760-38-4266

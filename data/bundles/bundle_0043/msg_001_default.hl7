@@ -1,0 +1,6 @@
+MSH|^~\&|EPIC|HOSP|CLINIC|HOSP|20250817||ORU^R01|19642|P|2.5.1
+PID|||MRN-804318||Chapman^Kenneth||19631030|F|||9909 Stacey Fords Apt. 412^Apt 106^East Andrea^GA^00851^USA||^PRN^PH^^^555^5053144
+PV1||I|WARD^A^123||||1234567893^Doe^Jane^^^^MD
+OBX|1|NM|2345-7^Glucose^LN||102|mg/dL|70-99|H|||F
+NTE|1||Patient has questions about dietary restrictions.
+ORDER #360-26-6554

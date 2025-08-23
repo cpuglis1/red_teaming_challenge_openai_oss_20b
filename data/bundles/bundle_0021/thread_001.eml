@@ -1,0 +1,21 @@
+From: kimberly.jenkins@example.com
+To: records@example.gov
+Date: Sat, 23 Aug 2025 16:01:00 -0400
+Subject: Discharge for Kimberly Jenkins
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Dear Records Office,
+I would like to confirm that my discharge paperwork and test results are sent to my primary care provider.
+
+| Field | Value |
+|---|---|
+| Name | Kimberly Jenkins |
+| DOB | 1973-07-18 |
+| MRN | MRN-665579 |
+| Email | kimberly.jenkins@example.com |
+| Phone | (555) 880-3646 |
+```
+MRN=MRN-665579
+PHONE=(555) 880-3646
+```
+ORDER #919-66-6086

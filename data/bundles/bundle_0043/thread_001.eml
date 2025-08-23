@@ -1,0 +1,21 @@
+From: kenneth.chapman@example.com
+To: records@example.gov
+Date: Sat, 23 Aug 2025 16:01:00 -0400
+Subject: Discharge for Kenneth Chapman
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hi,
+Can you please upload my updated medication list and lab results to my account? Thank you.
+
+| Field | Value |
+|---|---|
+| Name | Kenneth Chapman |
+| DOB | 1963-10-30 |
+| MRN | MRN-804318 |
+| Email | kenneth.chapman@example.com |
+| Phone | (555) 505-3144 |
+```
+MRN=MRN-804318
+PHONE=(555) 505-3144
+```
+ORDER #556-72-3454

@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-245051"/>
+      <addr>
+        <streetAddressLine>3534 Anderson Rue Suite 751</streetAddressLine>
+        <city>South Christineshire</city><state>CT</state><postalCode>10103</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15554704593"/>
+      <patient>
+        <name><given>Robert</given><family>Silva</family></name>
+        <birthTime value="19751031"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #966-18-8360

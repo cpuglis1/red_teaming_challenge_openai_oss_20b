@@ -1,0 +1,6 @@
+MSH|^~\&|EPIC|HOSP|CLINIC|HOSP|20250817||ORU^R01|69362|P|2.5.1
+PID|||MRN-431737||Jones^Danny||19981222|F|||90229 Miller Gateway Apt. 869^Apt 106^Port Alexandra^NV^58529^USA||^PRN^PH^^^555^6979565
+PV1||I|WARD^A^123||||1234567893^Doe^Jane^^^^MD
+OBX|1|NM|2345-7^Glucose^LN||102|mg/dL|70-99|H|||F
+NTE|1||Patient notes mild headache after starting new medication.
+ORDER #835-24-6870

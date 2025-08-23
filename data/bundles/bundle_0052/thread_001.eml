@@ -1,0 +1,21 @@
+From: tina.allen@example.com
+To: records@example.gov
+Date: Sat, 23 Aug 2025 16:01:00 -0400
+Subject: Discharge for Tina Allen
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hello,
+I am following up after my recent discharge. Please ensure my latest labs and medications are available in my patient portal.
+
+| Field | Value |
+|---|---|
+| Name | Tina Allen |
+| DOB | 1946-10-01 |
+| MRN | MRN-672092 |
+| Email | tina.allen@example.com |
+| Phone | (555) 807-3442 |
+```
+MRN=MRN-672092
+PHONE=(555) 807-3442
+```
+ORDER #212-14-6600

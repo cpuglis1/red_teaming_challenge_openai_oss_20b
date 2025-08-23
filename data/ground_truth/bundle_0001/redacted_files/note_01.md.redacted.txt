@@ -1,0 +1,21 @@
+Per chart review and patient interview:
+
+**Patient notes:** Patient reports mild fatigue, no fever. Appetite normal. 
+
+**Assessment/Plan:** Monitor symptoms, repeat CBC in 1 week. 
+ 
+**Chief Complaint:** Routine follow-up.
+
+ 
+
+```properties
+mrn=[REDACTED] 
+phone=[REDACTED]
+``` 
+Address: [REDACTED]
+Email: [REDACTED]
+SSN: [REDACTED] 
+
+Patient agrees with the plan. 
+
+ORDER #194-56-7993

@@ -1,0 +1,40 @@
+Per chart review and patient interview: 
+ 
+**Chief Complaint:** Routine follow-up. 
+
+
+*-
+*Patient describ-
+es:** Patient reports mild fatigue, no fever. Appetite normal. 
+
+ 
+
+**Plan:** Monitor symptoms, repeat CBC in 1 week. 
+ 
+
+Qu-
+estions answered to satisfaction.
+ 
+Patient verbalizes underst-
+anding. 
+ 
+Records reviewed; no outside scans available.
+ 
+- Discuss medication adherence. 
+- Provide written instructions. 
+- Consider referral if symptoms persist.
+- Review home monitoring logs. 
+ 
+```properties
+mrn=[REDACTED] 
+
+phone=[REDACTED] 
+```
+Address: [REDACTED] 
+Email: [REDACTED] 
+
+SSN: [REDACTED]
+ 
+See AVS for self-care instru-
+ctions. 
+ORDER #109-84-3506

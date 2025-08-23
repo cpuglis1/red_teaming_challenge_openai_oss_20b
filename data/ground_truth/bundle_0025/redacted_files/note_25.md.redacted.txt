@@ -1,0 +1,26 @@
+
+ 
+**Pt states:** Patient has questions about medication changes. 
+
+**Presenting Concern:** Discharge summary review. 
+
+**Assessment/Plan:** Clarify regimen, provide written instructions. 
+
+
+- Consider referral if symptoms persist. 
+
+- Schedule follow-up labs. 
+ 
+Patient: [REDACTED]
+DOB: [REDACTED] 
+Address: [REDACTED] 
+Email: [REDACTED]
+
+Phone: [REDACTED]
+MRN: MRN-847-
+581
+SSN: [REDACTED] 
+
+
+ 
+ORDER #370-48-7079

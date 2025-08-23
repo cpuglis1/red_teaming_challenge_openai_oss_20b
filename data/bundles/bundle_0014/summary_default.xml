@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-375504"/>
+      <addr>
+        <streetAddressLine>820 Melissa Cliff Apt. 361</streetAddressLine>
+        <city>New Brooke</city><state>RI</state><postalCode>11246</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15558629830"/>
+      <patient>
+        <name><given>Julie</given><family>Brown</family></name>
+        <birthTime value="19620215"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #711-87-5393

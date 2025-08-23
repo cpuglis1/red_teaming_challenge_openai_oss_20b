@@ -1,0 +1,28 @@
+Summary of today’s visit: 
+
+**Assessment & Plan:** Clarify regimen, provide written instruc-
+tions.
+
+ 
+**Reason for Visit:** Discharge summary review. 
+
+**Patient describ-
+es:** Patient has questions about medication changes.
+ 
+Questions answered to satisf-
+action. 
+ 
+```yaml
+mrn: [REDACTED] 
+phone: "[REDACTED]" 
+
+```
+Address: [REDACTED]
+Em-
+ail: jose-
+.mason@example.com
+SSN: [REDACTED] 
+
+
+Records forwarded to PCP.
+ORDER #439-25-4790

@@ -1,0 +1,22 @@
+Below is identi-
+fying information for record linkage: 
+ 
+
+**Chief Complaint:** Lab follow-up. 
+
+**A/P:** Maintain diet, repeat labs in 2 weeks.
+ 
+**Pt reports:** Patient brought home glucose log, values stable. 
+
+Counseled on diet and exercise. 
+
+
+Patient denies new allergies. 
+ 
+Follow-up scheduled as discussed. 
+
+Patient [REDACTED] (DOB [REDACTED]) was seen today. Address: [REDACTED]. Email: [REDACTED]. Phone: [REDACTED]. MRN: [REDACTED]. SSN: 881--
+53-2674. 
+ 
+Patient agrees with the plan. 
+ORDER #359-47-1993

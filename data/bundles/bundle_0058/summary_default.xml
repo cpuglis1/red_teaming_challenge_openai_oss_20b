@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-466643"/>
+      <addr>
+        <streetAddressLine>104 Johnson Lakes</streetAddressLine>
+        <city>North Renee</city><state>MD</state><postalCode>98474</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15559368541"/>
+      <patient>
+        <name><given>James</given><family>King</family></name>
+        <birthTime value="19571126"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #431-69-3761

@@ -1,0 +1,6 @@
+MSH|^~\&|EPIC|HOSP|CLINIC|HOSP|20250817||ORU^R01|63619|P|2.5.1
+PID|||MRN-271339||Chapman^Angela||19871202|F|||03105 Willie Harbors^^Lewisberg^VA^75348^USA||^PRN^PH^^^555^8465010
+PV1||I|WARD^A^123||||1234567893^Doe^Jane^^^^MD
+OBX|1|NM|2345-7^Glucose^LN||102|mg/dL|70-99|H|||F
+NTE|1||Patient reports mild cough, no fever.
+ORDER #902-30-5761

@@ -1,0 +1,21 @@
+From: danielle.johnson@example.com
+To: records@example.gov
+Date: Sat, 23 Aug 2025 16:01:00 -0400
+Subject: Discharge for Danielle Johnson
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Dear team,
+Please confirm that my discharge summary and medication changes are updated in my file.
+
+| Field | Value |
+|---|---|
+| Name | Danielle Johnson |
+| DOB | 1997-05-13 |
+| MRN | MRN-877572 |
+| Email | danielle.johnson@example.com |
+| Phone | (555) 214-1409 |
+```
+MRN=MRN-877572
+PHONE=(555) 214-1409
+```
+ORDER #449-39-5524

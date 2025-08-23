@@ -1,0 +1,21 @@
+From: john.wells@example.com
+To: records@example.gov
+Date: Sat, 23 Aug 2025 16:01:00 -0400
+Subject: Discharge for John Wells
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hello,
+I am following up after my recent discharge. Please ensure my latest labs and medications are available in my patient portal.
+
+| Field | Value |
+|---|---|
+| Name | John Wells |
+| DOB | 1962-05-30 |
+| MRN | MRN-564656 |
+| Email | john.wells@example.com |
+| Phone | (555) 995-2235 |
+```
+MRN=MRN-564656
+PHONE=(555) 995-2235
+```
+ORDER #394-22-6503

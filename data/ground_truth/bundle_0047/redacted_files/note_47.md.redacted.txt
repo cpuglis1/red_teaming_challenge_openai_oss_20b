@@ -1,0 +1,27 @@
+Below is identifying information for record linka-
+ge:
+
+**CC:** Routine follow-up.
+ 
+**Plan:** Monitor symptoms, repeat CBC in 1 week. 
+
+**Pt states:** Patient reports mild fatigue, no fever. Appetite normal.
+
+- Discuss medication adherence.
+
+- Schedule follow-up labs. 
+- Review home monitoring logs.
+- Provide written instructions.
+
+```properties
+mrn=[REDACTED]
+phone=[REDACTED] 
+``` 
+Address: [REDACTED] 
+Email: [REDACTED]
+SSN: 206-27-5-
+333 
+
+See AVS for self-care instructions.
+
+ORDER #759-20-2928

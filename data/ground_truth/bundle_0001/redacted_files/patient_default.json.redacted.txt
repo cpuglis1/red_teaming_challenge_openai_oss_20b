@@ -1,0 +1,41 @@
+{
+  "resourceType": "Patient",
+  "id": "[REDACTED]",
+  "identifier": [
+    {
+      "system": "http://hospital.example.org/mrn",
+      "value": "[REDACTED]"
+    }
+  ],
+  "name": [
+    {
+      "family": "[REDACTED]",
+      "given": [
+        "[REDACTED]"
+      ]
+    }
+  ],
+  "gender": "female",
+  "birthDate": "[REDACTED]",
+  "telecom": [
+    {
+      "system": "email",
+      "value": "[REDACTED]"
+    },
+    {
+      "system": "phone",
+      "value": "[REDACTED]"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "[REDACTED]"
+      ],
+      "city": "[REDACTED]",
+      "state": "[REDACTED]",
+      "postalCode": "[REDACTED]"
+    }
+  ]
+}
+ORDER #849-26-8596

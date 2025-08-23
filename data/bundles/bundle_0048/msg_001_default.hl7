@@ -1,0 +1,6 @@
+MSH|^~\&|EPIC|HOSP|CLINIC|HOSP|20250817||ORU^R01|38181|P|2.5.1
+PID|||MRN-385577||Powell^Tara||19490808|F|||876 Jacob Lake^^Garrettton^IL^35504^USA||^PRN^PH^^^555^8603546
+PV1||I|WARD^A^123||||1234567893^Doe^Jane^^^^MD
+OBX|1|NM|2345-7^Glucose^LN||102|mg/dL|70-99|H|||F
+NTE|1||Patient requests updated vaccination record.
+ORDER #556-41-5076

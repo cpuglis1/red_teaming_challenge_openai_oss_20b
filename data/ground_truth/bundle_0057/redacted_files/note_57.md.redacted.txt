@@ -1,0 +1,27 @@
+Admin details as recorded: 
+
+**Chief Complaint:** Routine follow-up. 
+
+ 
+**Patient reports:** Patient reports mild fatigue, no fever. Appetite normal. 
+ 
+
+**Assessment & Plan:** Monitor symptoms, repeat CBC in 1 week.
+ 
+- Review home monitoring logs. 
+- Schedule follow-up labs.
+
+- Discuss medication adherence.
+
+
+```properties
+mrn=[REDACTED] 
+phone=[REDACTED] 
+```
+Address: [REDACTED]
+E-
+mail: [REDACTED]
+SSN: [REDACTED] 
+ 
+See AVS for self-care instructions. 
+ORDER #760-63-8909

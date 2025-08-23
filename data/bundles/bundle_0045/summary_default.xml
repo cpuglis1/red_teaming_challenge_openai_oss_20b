@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-238890"/>
+      <addr>
+        <streetAddressLine>9947 Taylor Hollow</streetAddressLine>
+        <city>Benderhaven</city><state>ND</state><postalCode>65223</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15556185345"/>
+      <patient>
+        <name><given>Margaret</given><family>Jones</family></name>
+        <birthTime value="19590214"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #776-67-1526
