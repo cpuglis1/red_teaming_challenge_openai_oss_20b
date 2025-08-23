@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-169403"/>
+      <addr>
+        <streetAddressLine>47317 Brent Plains Apt. 132</streetAddressLine>
+        <city>Tuckerborough</city><state>VI</state><postalCode>53066</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15555105386"/>
+      <patient>
+        <name><given>James</given><family>West</family></name>
+        <birthTime value="19680419"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #503-90-6084

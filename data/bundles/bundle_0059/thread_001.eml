@@ -1,0 +1,21 @@
+From: robert.gonzalez@example.com
+To: records@example.gov
+Date: Sat, 23 Aug 2025 16:01:00 -0400
+Subject: Discharge for Robert Gonzalez
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hello,
+Please ensure my discharge summary and lab results are sent to my insurance provider.
+
+| Field | Value |
+|---|---|
+| Name | Robert Gonzalez |
+| DOB | 1999-03-19 |
+| MRN | MRN-444207 |
+| Email | robert.gonzalez@example.com |
+| Phone | (555) 297-7528 |
+```
+MRN=MRN-444207
+PHONE=(555) 297-7528
+```
+ORDER #383-97-6807

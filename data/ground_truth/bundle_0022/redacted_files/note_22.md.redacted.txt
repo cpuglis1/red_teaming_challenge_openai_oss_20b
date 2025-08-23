@@ -1,0 +1,24 @@
+Below is identifying informa-
+tion for record link-
+age:
+
+**Pt reports:** No adverse effects noted. Patient compliant with regimen. 
+
+ 
+**Plan:** Continue current medications, schedule next visit in 3 months. 
+
+**CC:** Medication review.
+ 
+```ini
+MRN=[REDACTED]
+PHONE=[REDACTED]
+``` 
+Address: [REDACTED]
+
+Email: [REDACTED]
+SSN: [REDACTED]
+
+
+Records forwarded to PCP. 
+
+ORDER #937-96-5511

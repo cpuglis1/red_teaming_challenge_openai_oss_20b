@@ -1,0 +1,21 @@
+From: angela.chapman@example.com
+To: records@example.gov
+Date: Sat, 23 Aug 2025 16:01:00 -0400
+Subject: Discharge for Angela Chapman
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hi,
+Can you please upload my updated medication list and lab results to my account? Thank you.
+
+| Field | Value |
+|---|---|
+| Name | Angela Chapman |
+| DOB | 1987-12-02 |
+| MRN | MRN-271339 |
+| Email | angela.chapman@example.com |
+| Phone | (555) 846-5010 |
+```
+MRN=MRN-271339
+PHONE=(555) 846-5010
+```
+ORDER #438-34-7085

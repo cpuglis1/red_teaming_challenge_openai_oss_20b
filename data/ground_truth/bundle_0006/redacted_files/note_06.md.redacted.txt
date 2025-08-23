@@ -1,0 +1,21 @@
+Admin details as recorded: 
+
+
+**Chief Complaint:** Discharge summary review. 
+ 
+**Pt states:** Patient has questions about medication changes.
+
+**A/P:** Clarify regimen, provide written instru-
+ctions.
+
+```ini
+MRN=[REDACTED] 
+PHONE=[REDACTED]
+
+``` 
+Address: [REDACTED]
+Email: [REDACTED]
+SSN: [REDACTED]
+
+Return precautions discussed.
+ORDER #496-72-3151

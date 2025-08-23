@@ -1,0 +1,22 @@
+Below is identi-
+fying information for record linkage-
+:
+
+**Plan:** Monitor symptoms, repeat CBC in 1 week.
+
+ 
+**Reason for Visit:** Routine follow-up. 
+
+**Patient notes:** Patient reports mild fatigue, no fever. Appetite normal. 
+ 
+Patient: [REDACTED] 
+DOB: [REDACTED] 
+
+Address: [REDACTED]
+Email: [REDACTED] 
+Phone: [REDACTED] 
+MRN: [REDACTED] 
+SSN: [REDACTED]
+ 
+Return precautions discussed.
+ORDER #509-68-9791

@@ -1,0 +1,22 @@
+Per chart review and patient interview: 
+ 
+
+**Chief Complaint:** Blood pressure check.
+ 
+**Assessment & Plan:** Adjust antihypertensive dose, monitor closely. 
+
+**Pt states:** Patient notes mild dizziness on standing.
+ 
+
+Patient: [REDACTED]
+DOB: [REDACTED] 
+Address: [REDACTED]
+Email: dann-
+y.jones@example.com
+Phone: (555) 697-95-
+65
+MRN: [REDACTED] 
+SSN: [REDACTED]
+ 
+Records forwarded to PCP. 
+ORDER #799-99-1734

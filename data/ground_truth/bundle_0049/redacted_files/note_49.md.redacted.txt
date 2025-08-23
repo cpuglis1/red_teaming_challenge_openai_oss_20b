@@ -1,0 +1,26 @@
+Admin details as recorded: 
+ 
+**Patient describes:** Patient brought home glucose log, values stable. 
+ 
+
+**Chief Complaint:** Lab follow-up. 
+
+**Plan:** Maintain diet, repeat labs in 2 weeks. 
+
+Patient verbalizes underst-
+anding.
+ 
+Patient denies new allergies.
+
+```yaml 
+mrn: [REDACTED] 
+phone: "[REDACTED]" 
+```
+
+Address: [REDACTED] 
+Email: [REDACTED]
+SSN: [REDACTED]
+ 
+See AVS for self-care instru-
+ctions.
+ORDER #694-46-8894

@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-271339"/>
+      <addr>
+        <streetAddressLine>03105 Willie Harbors</streetAddressLine>
+        <city>Lewisberg</city><state>VA</state><postalCode>75348</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15558465010"/>
+      <patient>
+        <name><given>Angela</given><family>Chapman</family></name>
+        <birthTime value="19871202"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #722-82-6546

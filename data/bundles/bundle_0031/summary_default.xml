@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-864491"/>
+      <addr>
+        <streetAddressLine>3467 Paul Skyway</streetAddressLine>
+        <city>Ramseymouth</city><state>PW</state><postalCode>17229</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15555208651"/>
+      <patient>
+        <name><given>Amanda</given><family>Navarro</family></name>
+        <birthTime value="19771231"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #269-41-5493

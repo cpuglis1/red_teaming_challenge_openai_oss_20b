@@ -1,0 +1,17 @@
+ 
+ 
+**Patient describes:** Patient has questions about medication changes. 
+
+**Presenting Concern:** Discharge summary review.
+ 
+**Assessment & Plan:** Clarify regimen, provide written instructions. 
+ 
+Time spent in counseling documented.
+
+Family history reviewed and noncontributory.
+
+Patient [REDACTED] (DOB [REDACTED]) was seen today. Address: [REDACTED]. Email: juli-
+e.brown@example.com. Phone: [REDACTED]. MRN: [REDACTED]. SSN: [REDACTED]. 
+
+Return precautions discussed.
+ORDER #696-66-5043

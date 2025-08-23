@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-161324"/>
+      <addr>
+        <streetAddressLine>083 John Lodge Suite 837</streetAddressLine>
+        <city>Westtown</city><state>CO</state><postalCode>39067</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15554034566"/>
+      <patient>
+        <name><given>Matthew</given><family>Beard</family></name>
+        <birthTime value="19570113"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #868-97-3718

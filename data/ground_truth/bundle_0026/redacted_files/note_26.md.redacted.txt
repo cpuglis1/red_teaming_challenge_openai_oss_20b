@@ -1,0 +1,34 @@
+ 
+ 
+**Assessment & Plan:** Maintain diet, repeat labs in 2 weeks. 
+
+ 
+**Patient notes:** Patient brought home glucose log, values stable. 
+
+**CC:** Lab follow-up. 
+
+Med reconciliation completed.
+ 
+Records reviewed; no outside scans available. 
+ 
+Patient verbalizes underst-
+anding. 
+
+- Discuss medication adher-
+ence.
+- Schedule follow-up labs. 
+- Review home monitoring logs.-
+
+
+```properties
+mrn=[REDACTED]
+
+phone=[REDACTED]
+``` 
+Address: [REDACTED]
+Email: scott.l-
+ewis@example.com 
+SSN: [REDACTED]
+
+See AVS for self-care instructions.
+ORDER #267-26-7012

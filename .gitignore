@@ -5,7 +5,4 @@ __pycache__/
 oss_20b/
 .env*
 .ipynb_checkpoints/
-outputs/
-data/ground_truth/
-data/bundles/
 *.log

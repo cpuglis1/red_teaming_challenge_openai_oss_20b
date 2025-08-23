@@ -1,0 +1,6 @@
+MSH|^~\&|EPIC|HOSP|CLINIC|HOSP|20250817||ORU^R01|20641|P|2.5.1
+PID|||MRN-299659||Brown^Jasmine||19820607|F|||8760 Marissa Loaf Apt. 967^Apt 106^West Kennethfurt^PR^55422^USA||^PRN^PH^^^555^9267669
+PV1||I|WARD^A^123||||1234567893^Doe^Jane^^^^MD
+OBX|1|NM|2345-7^Glucose^LN||102|mg/dL|70-99|H|||F
+NTE|1||Patient reports occasional dizziness since discharge. Bring home BP log.
+ORDER #250-56-4668

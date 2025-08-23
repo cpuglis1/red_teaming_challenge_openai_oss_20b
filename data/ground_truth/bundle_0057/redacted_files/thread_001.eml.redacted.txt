@@ -1,0 +1,21 @@
+From: [REDACTED]
+To: records@example.gov
+Date: Sat, 23 Aug 2025 16:01:00 -0400
+Subject: Discharge for [REDACTED]
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hi Records,
+I am checking that my discharge summary and lab results are available for review.
+
+| Field | Value |
+|---|---|
+| Name | [REDACTED] |
+| DOB | [REDACTED] |
+| MRN | [REDACTED] |
+| Email | [REDACTED] |
+| Phone | [REDACTED] |
+```
+MRN=[REDACTED]
+PHONE=[REDACTED]
+```
+ORDER #683-78-1543

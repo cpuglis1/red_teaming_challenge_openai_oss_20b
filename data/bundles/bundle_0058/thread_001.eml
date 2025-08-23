@@ -1,0 +1,21 @@
+From: james.king@example.com
+To: records@example.gov
+Date: Sat, 23 Aug 2025 16:01:00 -0400
+Subject: Discharge for James King
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hello team,
+I am requesting a copy of my discharge summary and recent lab work for my records.
+
+| Field | Value |
+|---|---|
+| Name | James King |
+| DOB | 1957-11-26 |
+| MRN | MRN-466643 |
+| Email | james.king@example.com |
+| Phone | (555) 936-8541 |
+```
+MRN=MRN-466643
+PHONE=(555) 936-8541
+```
+ORDER #195-68-3484

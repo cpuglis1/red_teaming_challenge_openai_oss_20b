@@ -1,0 +1,21 @@
+From: samuel.joyce@example.com
+To: records@example.gov
+Date: Sat, 23 Aug 2025 16:01:00 -0400
+Subject: Discharge for Samuel Joyce
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Dear team,
+Please confirm that my discharge summary and medication changes are updated in my file.
+
+| Field | Value |
+|---|---|
+| Name | Samuel Joyce |
+| DOB | 1961-08-10 |
+| MRN | MRN-189814 |
+| Email | samuel.joyce@example.com |
+| Phone | (555) 999-2290 |
+```
+MRN=MRN-189814
+PHONE=(555) 999-2290
+```
+ORDER #298-40-9414

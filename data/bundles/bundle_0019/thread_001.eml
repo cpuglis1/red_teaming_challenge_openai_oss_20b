@@ -1,0 +1,21 @@
+From: ann.rodriguez@example.com
+To: records@example.gov
+Date: Sat, 23 Aug 2025 16:01:00 -0400
+Subject: Discharge for Ann Rodriguez
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hello team,
+I am requesting a copy of my discharge summary and recent lab work for my records.
+
+| Field | Value |
+|---|---|
+| Name | Ann Rodriguez |
+| DOB | 1979-01-02 |
+| MRN | MRN-103402 |
+| Email | ann.rodriguez@example.com |
+| Phone | (555) 261-8433 |
+```
+MRN=MRN-103402
+PHONE=(555) 261-8433
+```
+ORDER #724-92-7066

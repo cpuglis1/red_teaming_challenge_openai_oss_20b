@@ -1,0 +1,22 @@
+Summary of today’s visit: 
+
+
+**-
+Plan:** Monitor symptoms, repeat CBC in 1 week.
+ 
+**Reason for Visit:** Routine follow-up.
+
+**Pt reports:** Patient reports mild fatigue, no fever. Appetite normal.
+
+```ini
+MRN=[REDACTED] 
+PHON-
+E=[REDACTED]
+```
+Address: [REDACTED]
+Email: [REDACTED] 
+
+SSN: [REDACTED] 
+ 
+ 
+ORDER #303-61-7720

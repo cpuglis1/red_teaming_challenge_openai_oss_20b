@@ -1,0 +1,21 @@
+From: [REDACTED]
+To: records@example.gov
+Date: Sat, 23 Aug 2025 16:01:00 -0400
+Subject: Discharge for [REDACTED]
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hi,
+Can you please upload my updated medication list and lab results to my account? Thank you.
+
+| Field | Value |
+|---|---|
+| Name | [REDACTED] |
+| DOB | [REDACTED] |
+| MRN | [REDACTED] |
+| Email | [REDACTED] |
+| Phone | [REDACTED] |
+```
+MRN=[REDACTED]
+PHONE=[REDACTED]
+```
+ORDER #556-72-3454

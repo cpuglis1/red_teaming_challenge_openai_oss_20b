@@ -1,0 +1,41 @@
+{
+  "resourceType": "Patient",
+  "id": "MRN-359947",
+  "identifier": [
+    {
+      "system": "http://hospital.example.org/mrn",
+      "value": "MRN-359947"
+    }
+  ],
+  "name": [
+    {
+      "family": "Lewis",
+      "given": [
+        "Scott"
+      ]
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1986-06-07",
+  "telecom": [
+    {
+      "system": "email",
+      "value": "scott.lewis@example.com"
+    },
+    {
+      "system": "phone",
+      "value": "(555) 562-2982"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "214 Davis Terrace Apt. 433"
+      ],
+      "city": "North Brandon",
+      "state": "NJ",
+      "postalCode": "80621"
+    }
+  ]
+}
+ORDER #333-82-7406

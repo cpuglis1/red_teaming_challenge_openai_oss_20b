@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-480612"/>
+      <addr>
+        <streetAddressLine>45868 Crosby Crescent Suite 294</streetAddressLine>
+        <city>North Candacestad</city><state>VA</state><postalCode>41615</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15551192832"/>
+      <patient>
+        <name><given>Donna</given><family>Ross</family></name>
+        <birthTime value="19831101"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #544-76-5966

@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-498591"/>
+      <addr>
+        <streetAddressLine>4303 Christopher Oval</streetAddressLine>
+        <city>Port Amandaberg</city><state>DC</state><postalCode>86975</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15559872654"/>
+      <patient>
+        <name><given>Carol</given><family>Burns</family></name>
+        <birthTime value="19601119"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #737-42-5783

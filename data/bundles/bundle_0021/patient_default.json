@@ -1,0 +1,41 @@
+{
+  "resourceType": "Patient",
+  "id": "MRN-665579",
+  "identifier": [
+    {
+      "system": "http://hospital.example.org/mrn",
+      "value": "MRN-665579"
+    }
+  ],
+  "name": [
+    {
+      "family": "Jenkins",
+      "given": [
+        "Kimberly"
+      ]
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1973-07-18",
+  "telecom": [
+    {
+      "system": "email",
+      "value": "kimberly.jenkins@example.com"
+    },
+    {
+      "system": "phone",
+      "value": "(555) 880-3646"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "2160 Walker Viaduct"
+      ],
+      "city": "Baileybury",
+      "state": "IN",
+      "postalCode": "03602"
+    }
+  ]
+}
+ORDER #493-31-5400

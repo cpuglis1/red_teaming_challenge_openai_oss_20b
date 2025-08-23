@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-146228"/>
+      <addr>
+        <streetAddressLine>467 Sanchez Plaza Apt. 639</streetAddressLine>
+        <city>Port Chad</city><state>WI</state><postalCode>54888</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15555335533"/>
+      <patient>
+        <name><given>Deborah</given><family>Moore</family></name>
+        <birthTime value="19961126"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #730-28-8304

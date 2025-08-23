@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-627276"/>
+      <addr>
+        <streetAddressLine>957 Coleman Summit Suite 574</streetAddressLine>
+        <city>Johnville</city><state>VA</state><postalCode>25743</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15551518811"/>
+      <patient>
+        <name><given>Jeffrey</given><family>Holt</family></name>
+        <birthTime value="19450216"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #492-65-2069

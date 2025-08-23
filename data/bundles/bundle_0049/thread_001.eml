@@ -1,0 +1,21 @@
+From: andrea.pennington@example.com
+To: records@example.gov
+Date: Sat, 23 Aug 2025 16:01:00 -0400
+Subject: Discharge for Andrea Pennington
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hi,
+Please verify that my discharge documents and prescriptions are reflected in my portal.
+
+| Field | Value |
+|---|---|
+| Name | Andrea Pennington |
+| DOB | 1958-04-07 |
+| MRN | MRN-629959 |
+| Email | andrea.pennington@example.com |
+| Phone | (555) 803-5325 |
+```
+MRN=MRN-629959
+PHONE=(555) 803-5325
+```
+ORDER #573-94-9993

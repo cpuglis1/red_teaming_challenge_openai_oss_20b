@@ -1,0 +1,21 @@
+From: joshua.bean@example.com
+To: records@example.gov
+Date: Sat, 23 Aug 2025 16:01:00 -0400
+Subject: Discharge for Joshua Bean
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hello,
+Please ensure my discharge summary and lab results are sent to my insurance provider.
+
+| Field | Value |
+|---|---|
+| Name | Joshua Bean |
+| DOB | 1957-01-23 |
+| MRN | MRN-246991 |
+| Email | joshua.bean@example.com |
+| Phone | (555) 649-8350 |
+```
+MRN=MRN-246991
+PHONE=(555) 649-8350
+```
+ORDER #963-71-7876

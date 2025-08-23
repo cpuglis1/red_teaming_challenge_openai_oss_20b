@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-665427"/>
+      <addr>
+        <streetAddressLine>48734 Jones Heights Apt. 455</streetAddressLine>
+        <city>East Edwardfurt</city><state>UT</state><postalCode>20529</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15555974510"/>
+      <patient>
+        <name><given>Julia</given><family>Wells</family></name>
+        <birthTime value="20000107"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #900-11-4931

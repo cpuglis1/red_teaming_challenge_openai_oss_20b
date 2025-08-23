@@ -1,0 +1,28 @@
+Below is identi-
+fying information for record linkage: 
+
+**Pati-
+ent reports:** Patient has questions about medication changes. 
+ 
+
+**Chief Complain-
+t:** Discharge summary review.
+
+ 
+**Assessment/Plan:** Clarify regimen, provide written instructions. 
+ 
+Counseled on diet and exercise.
+ 
+Patient: [REDACTED]
+DOB: [REDACTED] 
+Address: [REDACTED]
+Email: [REDACTED] 
+Phone: (555) 845-6-
+559
+MRN: [REDACTED] 
+SSN: [REDACTED]
+
+
+Return precauti-
+ons discussed. 
+ORDER #626-97-2854

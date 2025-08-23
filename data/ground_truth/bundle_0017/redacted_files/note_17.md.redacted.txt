@@ -1,0 +1,28 @@
+Summary of today’s visit: 
+ 
+**Ass-
+essment & Plan:** Monitor symptoms, repeat CBC in 1 week.
+ 
+**CC:** Routine follow-up. 
+
+**Pt states:** Patient reports mild fatigue, no fever. Appetite normal.
+
+Counseled on diet and exercise. 
+ 
+Family history reviewed and noncontributory. 
+ 
+- Review home monitoring logs. 
+- Consider referral if symptoms persist. 
+ 
+```properties 
+mrn=[REDACTED] 
+phone-
+=[REDACTED]
+``` 
+Address: [REDACTED]
+
+Email: [REDACTED]
+SSN: [REDACTED]
+
+Return precautions discussed. 
+ORDER #113-65-1791

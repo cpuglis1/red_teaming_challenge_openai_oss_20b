@@ -1,0 +1,6 @@
+MSH|^~\&|EPIC|HOSP|CLINIC|HOSP|20250817||ORU^R01|51459|P|2.5.1
+PID|||MRN-629959||Pennington^Andrea||19580407|F|||710 Jennifer Inlet Apt. 861^Apt 106^Port Robin^NH^15897^USA||^PRN^PH^^^555^8035325
+PV1||I|WARD^A^123||||1234567893^Doe^Jane^^^^MD
+OBX|1|NM|2345-7^Glucose^LN||102|mg/dL|70-99|H|||F
+NTE|1||Patient notes difficulty sleeping recently.
+ORDER #740-95-1690

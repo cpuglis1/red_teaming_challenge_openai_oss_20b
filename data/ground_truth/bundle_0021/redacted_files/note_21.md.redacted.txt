@@ -1,0 +1,14 @@
+Below is identifying information for record linkage: 
+
+
+**Reason for Visit:** Blood pressure check.
+
+**Patient reports:** Patient notes mild dizziness on standing. 
+
+
+**Assessment/Plan:** Adjust antihypertensive dose, monitor closely. 
+
+Patient [REDACTED] (DOB [REDACTED]) was seen today. Address: [REDACTED]. Email: [REDACTED]. Phone: [REDACTED]. MRN: [REDACTED]. SSN: [REDACTED]. 
+ 
+See AVS for self-care instructions. 
+ORDER #843-83-8176
