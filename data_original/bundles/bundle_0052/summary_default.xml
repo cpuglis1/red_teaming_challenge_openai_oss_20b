@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-672092"/>
+      <addr>
+        <streetAddressLine>60576 Mcneil Turnpike Apt. 702</streetAddressLine>
+        <city>Mollymouth</city><state>CT</state><postalCode>69438</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15558073442"/>
+      <patient>
+        <name><given>Tina</given><family>Allen</family></name>
+        <birthTime value="19461001"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #688-67-9540

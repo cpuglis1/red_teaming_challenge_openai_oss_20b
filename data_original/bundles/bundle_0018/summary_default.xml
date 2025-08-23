@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-905934"/>
+      <addr>
+        <streetAddressLine>64005 Dana Greens</streetAddressLine>
+        <city>Lake Scott</city><state>VT</state><postalCode>56558</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15556495371"/>
+      <patient>
+        <name><given>John</given><family>Odonnell</family></name>
+        <birthTime value="20010227"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #272-69-5036

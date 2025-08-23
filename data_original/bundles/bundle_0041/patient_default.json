@@ -1,0 +1,41 @@
+{
+  "resourceType": "Patient",
+  "id": "MRN-707040",
+  "identifier": [
+    {
+      "system": "http://hospital.example.org/mrn",
+      "value": "MRN-707040"
+    }
+  ],
+  "name": [
+    {
+      "family": "Ferguson",
+      "given": [
+        "Alexis"
+      ]
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1950-10-03",
+  "telecom": [
+    {
+      "system": "email",
+      "value": "alexis.ferguson@example.com"
+    },
+    {
+      "system": "phone",
+      "value": "(555) 683-5033"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "08427 Monique Ports Suite 777"
+      ],
+      "city": "Jackton",
+      "state": "KS",
+      "postalCode": "63117"
+    }
+  ]
+}
+ORDER #344-69-3470

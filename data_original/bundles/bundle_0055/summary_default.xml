@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-938742"/>
+      <addr>
+        <streetAddressLine>5623 Knight Turnpike Apt. 221</streetAddressLine>
+        <city>Harveybury</city><state>NM</state><postalCode>76936</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15559853662"/>
+      <patient>
+        <name><given>Brandon</given><family>Flynn</family></name>
+        <birthTime value="19610328"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #824-98-6117

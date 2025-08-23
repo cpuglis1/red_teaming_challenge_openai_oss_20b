@@ -1,0 +1,6 @@
+MSH|^~\&|EPIC|HOSP|CLINIC|HOSP|20250817||ORU^R01|29543|P|2.5.1
+PID|||MRN-802729||Pierce^Thomas||19730318|F|||963 Jennifer Locks Suite 787^^East Jeffreymouth^AK^77611^USA||^PRN^PH^^^555^4634432
+PV1||I|WARD^A^123||||1234567893^Doe^Jane^^^^MD
+OBX|1|NM|2345-7^Glucose^LN||102|mg/dL|70-99|H|||F
+NTE|1||Patient requests refill for blood pressure medication.
+ORDER #383-80-2539

@@ -1,0 +1,6 @@
+MSH|^~\&|EPIC|HOSP|CLINIC|HOSP|20250817||ORU^R01|69306|P|2.5.1
+PID|||MRN-983794||Sanchez^Barbara||19590914|F|||3116 Henderson Mountain Apt. 106^Apt 106^Laurenville^IA^25613^USA||^PRN^PH^^^555^8016313
+PV1||I|WARD^A^123||||1234567893^Doe^Jane^^^^MD
+OBX|1|NM|2345-7^Glucose^LN||102|mg/dL|70-99|H|||F
+NTE|1||Patient is scheduled for follow-up labs next week.
+ORDER #572-68-6893

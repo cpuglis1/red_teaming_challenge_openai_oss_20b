@@ -1,0 +1,41 @@
+{
+  "resourceType": "Patient",
+  "id": "MRN-676510",
+  "identifier": [
+    {
+      "system": "http://hospital.example.org/mrn",
+      "value": "MRN-676510"
+    }
+  ],
+  "name": [
+    {
+      "family": "Alvarado",
+      "given": [
+        "Cindy"
+      ]
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1951-04-13",
+  "telecom": [
+    {
+      "system": "email",
+      "value": "cindy.alvarado@example.com"
+    },
+    {
+      "system": "phone",
+      "value": "(555) 231-8787"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "484 Nguyen Square"
+      ],
+      "city": "Angelaborough",
+      "state": "MT",
+      "postalCode": "87654"
+    }
+  ]
+}
+ORDER #527-91-8137

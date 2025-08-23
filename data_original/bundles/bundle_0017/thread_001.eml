@@ -1,0 +1,21 @@
+From: lisa.evans@example.com
+To: records@example.gov
+Date: Mon, 18 Aug 2025 16:29:33 -0400
+Subject: Discharge for Lisa Evans
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hello team,
+I am requesting a copy of my discharge summary and recent lab work for my records.
+
+| Field | Value |
+|---|---|
+| Name | Lisa Evans |
+| DOB | 1974-03-27 |
+| MRN | MRN-654816 |
+| Email | lisa.evans@example.com |
+| Phone | (555) 710-8668 |
+```
+MRN=MRN-654816
+PHONE=(555) 710-8668
+```
+ORDER #385-55-4302

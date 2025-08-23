@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-520521"/>
+      <addr>
+        <streetAddressLine>65726 Jessica Run Suite 987</streetAddressLine>
+        <city>Grahamshire</city><state>KY</state><postalCode>42746</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15555924502"/>
+      <patient>
+        <name><given>Matthew</given><family>Atkinson</family></name>
+        <birthTime value="19830727"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #921-61-5046

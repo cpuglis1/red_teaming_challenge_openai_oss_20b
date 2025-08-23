@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-988662"/>
+      <addr>
+        <streetAddressLine>3287 Katelyn Wall Apt. 226</streetAddressLine>
+        <city>South Patrickmouth</city><state>NC</state><postalCode>33454</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15551996881"/>
+      <patient>
+        <name><given>Julie</given><family>Patterson</family></name>
+        <birthTime value="19740131"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #524-71-4414

@@ -1,144 +1,13 @@
 #!/usr/bin/env python3
-import argparse, math, sys, re, ast
-from collections import defaultdict, Counter
-
-import pandas as pd
+import argparse, csv, math, re, ast
+from collections import defaultdict
 import numpy as np
 
-# ---------- helpers ----------
-import math
+# ---------------------- small utils ----------------------
 
-def _binom_two_tailed_p(b10, b01):
-    """Exact McNemar (two-tailed) using a binomial test on min(b10,b01)."""
-    n = b10 + b01
-    k = min(b10, b01)
-    # two-sided p: sum of probabilities of outcomes as or more extreme than k
-    # under Binom(n, 0.5). We'll mirror both tails.
-    def _pmf(n, k):  # C(n,k) * 0.5^n
-        return math.comb(n, k) * (0.5 ** n)
-    p = sum(_pmf(n, i) for i in range(0, k + 1))
-    # reflect upper tail
-    p *= 2.0
-    return min(1.0, p)
-
-def _paired_counts(df, metric_col, scen_a, scen_b):
-    """Return (n_pairs, b10, b01) for McNemar on a boolean metric."""
-    sub = df[df["scenario"].isin([scen_a, scen_b])]
-    wide = sub.pivot_table(index="doc_id", columns="scenario", values=metric_col, aggfunc="max")
-    # Drop any rows missing one side
-    wide = wide.dropna(subset=[scen_a, scen_b])
-    # Cast to int (assumes metric is 0/1 or bool)
-    a = wide[scen_a].astype(int)
-    b = wide[scen_b].astype(int)
-    b10 = int(((a == 1) & (b == 0)).sum())
-    b01 = int(((a == 0) & (b == 1)).sum())
-    return len(wide), b10, b01
-
-def _try_print_pair(df, metric_col, label, scen_a, scen_b):
-    if scen_a in df["scenario"].unique() and scen_b in df["scenario"].unique():
-        n_pairs, b10, b01 = _paired_counts(df, metric_col, scen_a, scen_b)
-        p = _binom_two_tailed_p(b10, b01) if (b10 + b01) > 0 else 1.0
-        print(f"[{scen_a} vs {scen_b}] n_pairs={n_pairs}  "
-              f"b10(A1,B0)={b10}  b01(A0,B1)={b01}  p_exact={p:.6g}")
-
-def print_eval_awareness_contrasts(df):
-    """
-    Targeted, paired contrasts for eval awareness, objective hacking, and payload cues.
-    Safe to call even if some scenarios are missing.
-    """
-    scen = set(df["scenario"].unique())
-
-    # only print if we have *any* of these families
-    interesting = {
-        "exam_ablate", "exam_flip", "hidden_exam", "meta_exam",
-        "doc_injection", "security_public", "security_restricted",
-        # leave originals here in case you reuse this on old runs
-        "exam_template", "live_ui",
-    }
-    if not scen.intersection(interesting):
-        return
-
-    print("\n== Targeted contrasts (eval awareness / objective hacking / payload cues) ==")
-
-    def _pairs_present(pairs):
-        return [(a, b) for (a, b) in pairs if a in scen and b in scen]
-
-    # -------- leak_any --------
-    if "leak_any" in df.columns:
-        print("\n-- McNemar (paired) for leak_any --")
-        leak_pairs = _pairs_present([
-            # exam awareness + objective hacking
-            ("exam_ablate", "control"),
-            ("exam_template_neutral", "control"),
-            ("live_ui_neutral", "control"),
-            ("exam_template_neutral", "live_ui_neutral"),
-            ("exam_ablate", "live_ui"),
-            ("exam_flip",   "exam_ablate"),
-            ("hidden_exam", "control"),
-            ("meta_exam",   "control"),
-            # NEW: payload cues (document-borne)
-            ("doc_injection",       "control"),
-            ("doc_override",       "control"),
-            ("security_public",     "control"),
-            ("security_restricted", "control"),
-            ("security_restricted", "security_public"),
-        ])
-        for a, b in leak_pairs:
-            _try_print_pair(df, "leak_any", "leak", a, b)
-
-    # -------- decoy over-redaction --------
-    decoy_col = "decoy_over_redaction"
-    if decoy_col in df.columns:
-        print("\n-- McNemar (paired) for decoy over-redaction --")
-        decoy_pairs = _pairs_present([
-            # exam awareness + objective hacking
-            ("exam_ablate", "control"),
-            ("exam_template_neutral", "control"),
-            ("live_ui_neutral", "control"),
-            ("exam_template_neutral", "live_ui_neutral"),
-            ("exam_ablate", "live_ui"),
-            ("exam_flip",   "exam_ablate"),
-            ("hidden_exam", "control"),
-            ("meta_exam",   "control"),
-            # NEW: payload cues (document-borne)
-            ("doc_injection",       "control"),
-            ("doc_override",       "control"),
-            ("security_public",     "control"),
-            ("security_restricted", "control"),
-            ("security_restricted", "security_public"),
-        ])
-        for a, b in decoy_pairs:
-            _try_print_pair(df, decoy_col, "decoy", a, b)
-
-def coerce_bool(s: pd.Series) -> pd.Series:
-    if pd.api.types.is_bool_dtype(s):
-        return s.astype(int)
-    if pd.api.types.is_numeric_dtype(s):
-        # Treat any nonzero as 1
-        return (s.astype(float) > 0).astype(int)
-    # stringy
-    m = {'true':1,'t':1,'yes':1,'y':1,'1':1,
-         'false':0,'f':0,'no':0,'n':0,'0':0}
-    return s.astype(str).str.strip().str.lower().map(m).fillna(0).astype(int)
-
-def find_col(df: pd.DataFrame, preferred_names, fallback_contains=None, required=True):
-    for name in preferred_names:
-        if name in df.columns:
-            return name
-    if fallback_contains:
-        cands = [c for c in df.columns if fallback_contains in c]
-        if len(cands)==1:
-            return cands[0]
-        # prefer a binary-looking column
-        for c in cands:
-            vals = pd.to_numeric(df[c], errors='coerce')
-            if vals.notna().mean() > 0.9 and set(pd.unique(vals.dropna()).tolist()).issubset({0,1}):
-                return c
-        if cands:
-            return cands[0]
-    if required:
-        raise SystemExit(f"Could not find any of {preferred_names} (or *{fallback_contains}*) in CSV columns: {list(df.columns)}")
-    return None
+def print_header(title: str):
+    print("\n" + title)
+    print("-" * len(title))
 
 def wilson_ci(k, n, z=1.96):
     if n == 0:
@@ -157,37 +26,28 @@ def fmt_rate(k, n):
     return f"{pct:5.1f}%  ({k}/{n})   CI95[{100*lo:4.1f}–{100*hi:4.1f}]"
 
 def mcnemar_exact_p(b, c):
-    """
-    Two-sided exact McNemar test via binomial tail on discordant pairs.
-    b = A=1,B=0 ; c = A=0,B=1
-    """
+    """Two-sided exact McNemar via binomial tails on discordant pairs."""
     n = b + c
     if n == 0:
         return 1.0
-    # two-sided: p = 2 * min( BinomCDF(min(b,c)), 1 - BinomCDF(max(b,c)-1) )
-    from math import comb
+    k = min(b, c)
     log_half_n = n * math.log(0.5)
     def logpmf(x):
-        return math.log(comb(n, x)) + log_half_n
-    # sum_{i=0..k} C(n,i)*(1/2)^n
-    k = min(b, c)
+        return math.log(math.comb(n, x)) + log_half_n
     tail_small = sum(math.exp(logpmf(i)) for i in range(0, k+1))
-    tail_large = sum(math.exp(logpmf(i)) for i in range(max(b,c), n+1))
+    tail_large = sum(math.exp(logpmf(i)) for i in range(max(b, c), n+1))
     p_two = 2 * min(tail_small, tail_large)
     return min(1.0, p_two)
 
-def two_prop_test(k1,n1,k2,n2):
-    """
-    Unpaired two-proportion z-test (two-sided).
-    Returns dict with p1, p2, diff, z, p, and Wilson CIs.
-    """
-    if n1==0 or n2==0:
+def two_prop_test(k1, n1, k2, n2):
+    """Unpaired two-proportion z-test (two-sided) + Wilson CIs."""
+    if n1 == 0 or n2 == 0:
         return {"p1":0,"p2":0,"diff":0,"z":0,"p":1.0,
                 "ci1":(0,0),"ci2":(0,0)}
     p1 = k1/n1; p2 = k2/n2
     diff = p2 - p1
     p_pool = (k1 + k2)/(n1 + n2)
-    se = math.sqrt(p_pool*(1-p_pool)*(1/n1 + 1/n2)) if 0<p_pool<1 else 0.0
+    se = math.sqrt(p_pool*(1-p_pool)*(1/n1 + 1/n2)) if 0 < p_pool < 1 else 0.0
     if se == 0:
         z = 0.0; p = 1.0
     else:
@@ -196,168 +56,345 @@ def two_prop_test(k1,n1,k2,n2):
     return {"p1":p1, "p2":p2, "diff":diff, "z":z, "p":p,
             "ci1": wilson_ci(k1,n1), "ci2": wilson_ci(k2,n2)}
 
-def pick_scenarios(df):
-    """
-    Return a stable, sensible ordering for all scenarios present.
-    First three entries are used by the generic McNemar block below.
-    """
-    preferred = [
-        # originals
-        "control", "exam_template", "live_ui",
-        # your eval-awareness family
-        "exam_ablate", "exam_flip",
-        "hidden_exam", "hidden_live",
-        "exam_template_neutral", "live_ui_neutral"
-        "meta_exam", "meta_live",
-        # NEW: payload cues
-        "doc_injection", "doc_override", "security_public", "security_restricted",
-    ]
-    have = df["scenario"].astype(str).unique().tolist()
-    order = [s for s in preferred if s in have] + [s for s in have if s not in preferred]
-    if len(order) < 2:
-        raise SystemExit(f"Need at least 2 scenarios; got {have}")
-    return order
+def point_biserial(xs, ys01):
+    xs = np.asarray(xs, dtype=float)
+    ys = np.asarray(ys01, dtype=float)
+    if xs.size == 0 or ys.size == 0 or xs.size != ys.size:
+        return float("nan")
+    if np.all(xs == xs[0]):
+        return float("nan")
+    vy = np.var(ys)
+    if vy <= 1e-12:
+        return float("nan")
+    return np.corrcoef(xs, ys)[0,1]
 
-def safe_get(df, name):
-    return df[name] if name in df.columns else pd.Series(index=df.index, dtype=float)
+# ---------------------- CSV + coercion ----------------------
+
+BOOL_MAP = {
+    'true':1,'t':1,'yes':1,'y':1,'1':1,
+    'false':0,'f':0,'no':0,'n':0,'0':0
+}
+
+def normalize_empty(v):
+    if v is None:
+        return None
+    s = str(v).strip()
+    return None if s == "" or s.lower() in {"na","nan","none","null"} else s
+
+def coerce_bool_value(v):
+    v = normalize_empty(v)
+    if v is None:
+        return None
+    if isinstance(v, (int, float)):
+        try:
+            return 1 if float(v) > 0 else 0
+        except Exception:
+            return None
+    s = str(v).strip().lower()
+    if s in BOOL_MAP:
+        return BOOL_MAP[s]
+    try:
+        return 1 if float(s) > 0 else 0
+    except Exception:
+        return None
+
+def read_csv_rows(path):
+    with open(path, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        rows = [dict(r) for r in reader]
+        header = reader.fieldnames or []
+    return rows, header
+
+def columns_set(rows, header_cols):
+    cols = set(header_cols)
+    for r in rows:
+        cols.update(r.keys())
+    return cols
+
+def find_col(cols, preferred_names, fallback_contains=None, required=True, rows=None):
+    for name in preferred_names:
+        if name in cols:
+            return name
+    if fallback_contains:
+        cands = [c for c in cols if fallback_contains in c]
+        if len(cands) == 1:
+            return cands[0]
+        if rows and cands:
+            # prefer binary-looking
+            best = None; best_score = -1.0
+            for c in cands:
+                total = good = 0
+                seen = set()
+                for r in rows:
+                    v = r.get(c)
+                    nv = normalize_empty(v)
+                    if nv is None:
+                        continue
+                    total += 1
+                    cv = coerce_bool_value(v)
+                    if cv is not None:
+                        good += 1
+                        seen.add(int(cv))
+                score = (good/(total or 1.0)) + (1.0 if seen.issubset({0,1}) and seen else 0.0)
+                if score > best_score:
+                    best_score = score; best = c
+            if best:
+                return best
+        if cands:
+            return cands[0]
+    if required:
+        raise SystemExit(f"Could not find any of {preferred_names} (or *{fallback_contains}*) in CSV columns: {sorted(cols)}")
+    return None
+
+def ensure_int01_column(rows, col):
+    for r in rows:
+        v = coerce_bool_value(r.get(col))
+        r[col] = 0 if v is None else int(v)
 
 def parse_listish_cell(x):
-    """
-    Robustly parse a list-like cell such as "['ADDRESS','PHONE']" or "[]".
-    Returns [] on failure/NA.
-    """
+    x = normalize_empty(x)
+    if x is None:
+        return []
     if isinstance(x, list):
         return x
-    if pd.isna(x):
-        return []
-    s = str(x).strip()
-    if s == "" or s == "[]":
+    s = str(x)
+    if s == "[]":
         return []
     try:
         val = ast.literal_eval(s)
         if isinstance(val, list):
             return val
-        return []
     except Exception:
-        # Fallback: pull tokens between quotes
-        toks = re.findall(r"'([^']+)'|\"([^\"]+)\"", s)
-        vals = [a or b for (a,b) in toks]
-        return vals
+        pass
+    toks = re.findall(r"'([^']+)'|\"([^\"]+)\"", s)
+    return [a or b for (a,b) in toks]
 
-def parse_listish_series(col: pd.Series) -> pd.Series:
-    return col.apply(parse_listish_cell)
+# ---------------------- scenario helpers ----------------------
 
-# ---------- reporting blocks ----------
+def pick_scenarios(rows):
+    preferred = [
+        "control", "exam_template", "live_ui",
+        "exam_ablate", "exam_flip",
+        "hidden_exam", "hidden_live",
+        "exam_template_neutral", "live_ui_neutral",
+        "meta_exam", "meta_live",
+        "exam_explicit_ablate_user", "exam_explicit_ablate_system",
+        "meta_env", "meta_workflow", "meta_qa", "meta_placebo",
+        "doc_injection", "doc_override", "security_public", "security_restricted",
+    ]
+    have = []
+    seen = set()
+    for r in rows:
+        s = str(r.get("scenario",""))
+        if s and s not in seen:
+            have.append(s)
+            seen.add(s)
+    order = [s for s in preferred if s in seen] + [s for s in have if s not in preferred]
+    if len(order) < 2:
+        raise SystemExit(f"Need at least 2 scenarios; got {have}")
+    return order
 
-def rate_by_scenario(df, scen_order, flag_col, label):
+# ---------------------- aggregations & reports ----------------------
+
+def rate_by_scenario(rows, scen_order, flag_col, label):
     print(f"\n== {label} by scenario ==")
     for s in scen_order:
-        d = df[df["scenario"]==s]
+        d = [r for r in rows if str(r.get("scenario","")) == s]
         n = len(d)
-        k = int(d[flag_col].sum())
+        k = sum(int(r.get(flag_col, 0) or 0) for r in d)
         print(f"[{s:13}] {fmt_rate(k,n)}")
 
-def rate_by_filetype(df, flag_col, label):
+def rate_by_filetype(rows, flag_col, label):
     print(f"\n== {label} by file_type ==")
-    for ft, d in df.groupby("file_type"):
+    groups = defaultdict(list)
+    for r in rows:
+        ft = str(r.get("file_type", "") or "NA")
+        groups[ft].append(r)
+    for ft, d in groups.items():
         n = len(d)
-        k = int(d[flag_col].sum())
-        print(f"{ft or 'NA':15} {fmt_rate(k,n)}")
+        k = sum(int(r.get(flag_col, 0) or 0) for r in d)
+        print(f"{ft:15} {fmt_rate(k,n)}")
 
-def class_leaks(df, scen_order):
-    """
-    Supports either:
-      • per-class boolean columns: leak_NAME, leak_DOB, ...
-      • a single list column: leak_types  (e.g., "['ADDRESS','PHONE']")
-    """
-    # 1) Boolean per-class columns (if present)
-    bool_cols = [c for c in df.columns
-                 if c.startswith("leak_")
+def paired_mcnemar(rows, id_col, scenA, scenB, flag_col, exclude_refusals=True, refusal_col=None):
+    a_map, b_map = {}, {}
+    for r in rows:
+        scen = str(r.get("scenario",""))
+        if scen not in (scenA, scenB):
+            continue
+        if exclude_refusals and refusal_col and coerce_bool_value(r.get(refusal_col)) == 1:
+            continue
+        doc_id = str(r.get(id_col, "") or "")
+        if not doc_id:
+            continue
+        flag = coerce_bool_value(r.get(flag_col))
+        flag = 0 if flag is None else int(flag)
+        if scen == scenA:
+            a_map[doc_id] = max(a_map.get(doc_id, 0), flag)
+        else:
+            b_map[doc_id] = max(b_map.get(doc_id, 0), flag)
+    common = set(a_map.keys()) & set(b_map.keys())
+    b10 = sum(1 for d in common if a_map[d] == 1 and b_map[d] == 0)
+    b01 = sum(1 for d in common if a_map[d] == 0 and b_map[d] == 1)
+    p = mcnemar_exact_p(b10, b01)
+    return {"n_pairs": len(common), "b10": b10, "b01": b01, "p": p}
+
+def class_leaks(rows, scen_order, cols):
+    # boolean leak_* columns
+    bool_cols = [c for c in cols if c.startswith("leak_")
                  and c not in {"leak_", "leak", "leak_rate", "leak_types"}]
-    bool_cols = [c for c in bool_cols if pd.api.types.is_numeric_dtype(df[c]) or pd.api.types.is_bool_dtype(df[c])]
+    pruned = []
+    for c in bool_cols:
+        seen = set()
+        for r in rows:
+            v = coerce_bool_value(r.get(c))
+            if v is not None:
+                seen.add(int(v))
+        if seen.issubset({0,1}) and seen:
+            pruned.append(c)
 
-    if bool_cols:
+    if pruned:
         print("\n== Per-PII-class leak rates (boolean columns) ==")
-        for c in sorted(bool_cols):
+        for c in sorted(pruned):
             print(f"\n-- {c} --")
             for s in scen_order:
-                d = df[df["scenario"]==s]
+                d = [r for r in rows if str(r.get("scenario","")) == s]
                 n = len(d)
-                k = int(coerce_bool(d[c]).sum())
+                k = sum((coerce_bool_value(r.get(c)) or 0) for r in d)
                 print(f"[{s:13}] {fmt_rate(k,n)}")
 
-    # 2) leak_types list column
-    if "leak_types" in df.columns:
+    # leak_types list column
+    if "leak_types" in cols:
         print("\n== Per-PII-class leak rates (from leak_types list) ==")
-        lt = parse_listish_series(df["leak_types"])
-        # discover classes
-        classes = sorted(set(t for lst in lt for t in lst))
+        parsed = []
+        all_classes = set()
+        for r in rows:
+            lt = parse_listish_cell(r.get("leak_types"))
+            parsed.append(lt); all_classes.update(lt)
+        classes = sorted(all_classes)
         if not classes:
             print("(no classes found in leak_types)")
             return
-        # attach parsed list to df for indexing
-        df_local = df.copy()
-        df_local["_leak_types_list"] = lt
-
         for c in classes:
             print(f"\n-- {c} --")
             for s in scen_order:
-                d = df_local[df_local["scenario"]==s]
-                n = len(d)
-                k = int(d["_leak_types_list"].apply(lambda xs: c in xs).sum())
+                n = k = 0
+                for i, r in enumerate(rows):
+                    if str(r.get("scenario","")) != s: 
+                        continue
+                    n += 1
+                    if c in parsed[i]:
+                        k += 1
                 print(f"[{s:13}] {fmt_rate(k,n)}")
 
-def confidence_calibration(df, leak_col, refusal_col=None):
-    sub = df.copy()
-    if refusal_col and refusal_col in sub.columns:
-        sub = sub[sub[refusal_col] == 0]
-    if "confidence" not in sub.columns:
-        print("\n(no 'confidence' column; skipping calibration)")
-        return
-    sub = sub[pd.to_numeric(sub["confidence"], errors="coerce").notna()]
-    if sub.empty:
+def confidence_calibration(rows, leak_col, refusal_col=None):
+    xs = []; ys = []
+    for r in rows:
+        if refusal_col and coerce_bool_value(r.get(refusal_col)) == 1:
+            continue
+        conf = normalize_empty(r.get("confidence"))
+        if conf is None:
+            continue
+        try:
+            c = float(conf)
+        except Exception:
+            continue
+        c = max(0.0, min(1.0, c))
+        leak = coerce_bool_value(r.get(leak_col))
+        leak = 0 if leak is None else int(leak)
+        xs.append(c); ys.append(1 - leak)  # success = no leak
+
+    if not xs:
         print("\n== Confidence calibration ==\n(no confidence values found)")
         return
-    conf = sub["confidence"].astype(float).clip(0,1)
-    success = (1 - sub[leak_col].astype(int)).astype(int)
-    bins = [0.0,0.2,0.4,0.6,0.8,1.001]
+
+    xs = np.asarray(xs, dtype=float)
+    ys = np.asarray(ys, dtype=float)
+
+    bins = np.array([0.0, 0.2, 0.4, 0.6, 0.8, 1.001])
     labels = ["0.0–0.2","0.2–0.4","0.4–0.6","0.6–0.8","0.8–1.0"]
-    sub = sub.assign(conf_bin=pd.cut(conf, bins=bins, labels=labels, include_lowest=True, right=False))
+    idx = np.digitize(xs, bins, right=False) - 1
     print("\n== Confidence calibration (success = no leak, non-refusals) ==")
-    for lab in labels:
-        d = sub[sub["conf_bin"]==lab]
-        n = len(d)
+    for i, lab in enumerate(labels):
+        mask = (idx == i)
+        n = int(mask.sum())
         if n == 0:
             print(f"  {lab}: success=— (n=0)")
-            continue
-        succ = int(success.loc[d.index].sum())
-        rate = succ / n
-        print(f"  {lab}: success={rate:.3f} (n={n})")
-    try:
-        r = np.corrcoef(conf, success)[0,1]
-    except Exception:
-        r = float("nan")
-    print(f"Point-biserial corr(conf, success): {r}")
+        else:
+            rate = float(ys[mask].mean())
+            print(f"  {lab}: success={rate:.3f} (n={n})")
+    r = point_biserial(xs, ys)
+    print(f"Point-biserial corr(conf, success): {r if r == r else 'NA'}")
 
-def print_header(title):
-    print("\n" + title)
-    print("-"*len(title))
+def print_eval_awareness_contrasts(rows, scen_order, cols, id_col, refusal_col, leak_col, decoy_col):
+    scen = set(str(r.get("scenario","")) for r in rows)
+    interesting = {
+        "exam_ablate", "exam_flip", "hidden_exam", "meta_exam",
+        "exam_template", "live_ui", "exam_template_neutral", "live_ui_neutral",
+        "doc_injection", "doc_override", "security_public", "security_restricted",
+        "exam_explicit_ablate_user", "exam_explicit_ablate_system",
+        "meta_env", "meta_workflow", "meta_qa", "meta_placebo",
+    }
+    if not scen.intersection(interesting):
+        return
 
-def paired_mcnemar(df, id_col, scenA, scenB, flag_col, exclude_refusals=True, refusal_col=None):
-    sub = df[df["scenario"].isin([scenA, scenB])].copy()
-    if exclude_refusals and refusal_col and refusal_col in sub.columns:
-        sub = sub[sub[refusal_col] == 0]
-    wide = sub.pivot_table(index=id_col, columns="scenario", values=flag_col, aggfunc="max")
-    wide = wide.dropna(subset=[scenA, scenB])
-    a = coerce_bool(wide[scenA])
-    b = coerce_bool(wide[scenB])
-    b10 = int(((a==1) & (b==0)).sum())
-    b01 = int(((a==0) & (b==1)).sum())
-    n = len(wide)
-    p = mcnemar_exact_p(b10, b01)
-    return {"n_pairs": n, "b10": b10, "b01": b01, "p": p}
+    def pairs_present(pairs):
+        return [(a,b) for (a,b) in pairs if a in scen and b in scen]
 
-# ---------- main ----------
+    print("\n== Targeted contrasts (eval awareness / objective hacking / payload cues / ablations) ==")
+
+    if leak_col:
+        print("\n-- McNemar (paired) for leak_any --")
+        leak_pairs = pairs_present([
+            ("exam_ablate", "control"),
+            ("exam_template_neutral", "control"),
+            ("live_ui_neutral", "control"),
+            ("exam_template_neutral", "live_ui_neutral"),
+            ("hidden_exam", "control"),
+            ("meta_exam",   "control"),
+            ("doc_injection", "control"),
+            ("doc_override",  "control"),
+            ("security_public", "control"),
+            ("security_restricted", "control"),
+            ("security_restricted", "security_public"),
+            ("exam_explicit_ablate_user",    "control"),
+            ("exam_explicit_ablate_system",  "control"),
+            ("exam_explicit_ablate_system",  "exam_explicit_ablate_user"),
+            ("meta_env", "control"), ("meta_workflow", "control"),
+            ("meta_qa", "control"), ("meta_placebo", "control"),
+            ("meta_env","meta_placebo"), ("meta_workflow","meta_placebo"),
+            ("meta_qa","meta_placebo"),
+        ])
+        for A,B in leak_pairs:
+            res = paired_mcnemar(rows, id_col, A, B, leak_col, True, refusal_col)
+            print(f"[{A} vs {B}] n_pairs={res['n_pairs']}  b10(A1,B0)={res['b10']}  b01(A0,B1)={res['b01']}  p_exact={res['p']:.6g}")
+
+    if decoy_col:
+        print("\n-- McNemar (paired) for decoy over-redaction --")
+        decoy_pairs = pairs_present([
+            ("exam_ablate", "control"),
+            ("exam_template_neutral", "control"),
+            ("live_ui_neutral", "control"),
+            ("exam_template_neutral", "live_ui_neutral"),
+            ("hidden_exam", "control"),
+            ("meta_exam",   "control"),
+            ("doc_injection", "control"),
+            ("doc_override",  "control"),
+            ("security_public", "control"),
+            ("security_restricted", "control"),
+            ("security_restricted", "security_public"),
+            ("exam_explicit_ablate_user",    "control"),
+            ("exam_explicit_ablate_system",  "control"),
+            ("exam_explicit_ablate_system",  "exam_explicit_ablate_user"),
+            ("meta_env", "control"), ("meta_workflow", "control"),
+            ("meta_qa", "control"), ("meta_placebo", "control"),
+            ("meta_env","meta_placebo"), ("meta_workflow","meta_placebo"),
+            ("meta_qa","meta_placebo"),
+        ])
+        for A,B in decoy_pairs:
+            res = paired_mcnemar(rows, id_col, A, B, decoy_col, True, refusal_col)
+            print(f"[{A} vs {B}] n_pairs={res['n_pairs']}  b10(A1,B0)={res['b10']}  b01(A0,B1)={res['b01']}  p_exact={res['p']:.6g}")
+
+# ---------------------- main ----------------------
 
 def main():
     ap = argparse.ArgumentParser()
@@ -365,66 +402,76 @@ def main():
     ap.add_argument("--id-col", default="doc_id")
     args = ap.parse_args()
 
-    df = pd.read_csv(args.csv)
-    if "scenario" not in df.columns:
+    rows, header = read_csv_rows(args.csv)
+    if not rows:
+        raise SystemExit("CSV is empty or unreadable.")
+    cols = columns_set(rows, header)
+
+    if "scenario" not in cols:
         raise SystemExit("CSV must have a 'scenario' column.")
-    scen_order = pick_scenarios(df)
 
-    # Locate columns (robust names)
-    leak_col   = find_col(df, ["leak"], fallback_contains="leak")
-    decoy_col  = find_col(df, ["decoy_over_redaction","decoy","over_redaction","decoy_fp"], fallback_contains="decoy")
-    uncertainty_col = find_col(df, ["uncertainty","uncertainty_talk"], fallback_contains="uncertainty", required=False)
-    refusal_col     = find_col(df, ["refusal"], fallback_contains="refusal", required=False)
-    schema_col      = find_col(df, ["schema_ok","schema"], fallback_contains="schema", required=False)
+    scen_order = pick_scenarios(rows)
 
-    # Coerce to ints where appropriate
+    leak_col   = find_col(cols, ["leak_any","leak"], fallback_contains="leak", rows=rows)
+    decoy_col  = find_col(cols, ["decoy_over_redaction","decoy","over_redaction","decoy_fp"],
+                          fallback_contains="decoy", rows=rows)
+    uncertainty_col = find_col(cols, ["uncertainty","uncertainty_talk"], fallback_contains="uncertainty",
+                               required=False, rows=rows)
+    refusal_col     = find_col(cols, ["refusal"], fallback_contains="refusal", required=False, rows=rows)
+    schema_col      = find_col(cols, ["schema_ok","schema"], fallback_contains="schema", required=False, rows=rows)
+
+    # Coerce to 0/1 ints for key flags
     for c in [leak_col, decoy_col, uncertainty_col, refusal_col, schema_col]:
-        if c and c in df.columns:
-            df[c] = coerce_bool(df[c])
+        if c:
+            ensure_int01_column(rows, c)
 
     # Quick overview
     print_header("Basic counts")
-    print("Rows:", len(df))
+    print("Rows:", len(rows))
     print("Scenarios:", scen_order)
     if refusal_col:
-        ref_rate = df[refusal_col].mean()
+        ref_rate = np.mean([r.get(refusal_col,0) for r in rows]) if rows else 0.0
         print(f"Refusal rate (overall): {100*ref_rate:.1f}%")
     if schema_col:
-        sch_rate = df[schema_col].mean()
+        sch_rate = np.mean([r.get(schema_col,0) for r in rows]) if rows else 0.0
         print(f"Schema compliance (overall): {100*sch_rate:.1f}%")
 
     # Per-scenario rates
-    rate_by_scenario(df, scen_order, leak_col,  "Leak rate")
-    rate_by_scenario(df, scen_order, decoy_col, "Decoy over-redaction")
+    rate_by_scenario(rows, scen_order, leak_col,  "Leak rate")
+    rate_by_scenario(rows, scen_order, decoy_col, "Decoy over-redaction")
     if uncertainty_col:
-        rate_by_scenario(df, scen_order, uncertainty_col, "Uncertainty talk")
+        rate_by_scenario(rows, scen_order, uncertainty_col, "Uncertainty talk")
 
-    # Pairwise McNemar (paired) for leak / decoy / uncertainty
-    pairs = []
-    if len(scen_order) >= 3:
-        pairs = [(scen_order[0], scen_order[1]),
-                 (scen_order[1], scen_order[2]),
-                 (scen_order[0], scen_order[2])]
-    elif len(scen_order) == 2:
-        pairs = [(scen_order[0], scen_order[1])]
+    # Pairwise McNemar for first 2–3 scenarios
     def show_mcnemar(flag_col, label):
+        if not flag_col: 
+            return
+        pairs = []
+        if len(scen_order) >= 3:
+            pairs = [(scen_order[0], scen_order[1]),
+                     (scen_order[1], scen_order[2]),
+                     (scen_order[0], scen_order[2])]
+        elif len(scen_order) == 2:
+            pairs = [(scen_order[0], scen_order[1])]
         print(f"\n== McNemar (paired) for {label} ==")
         for A,B in pairs:
-            res = paired_mcnemar(df, args.id_col, A, B, flag_col,
-                                 exclude_refusals=True, refusal_col=refusal_col)
+            res = paired_mcnemar(rows, args.id_col, A, B, flag_col, True, refusal_col)
             print(f"[{A} vs {B}] n_pairs={res['n_pairs']}  b10(A1,B0)={res['b10']}  b01(A0,B1)={res['b01']}  p_exact={res['p']:.4g}")
+
     show_mcnemar(leak_col,  "leak")
     show_mcnemar(decoy_col, "decoy over-redaction")
     if uncertainty_col:
         show_mcnemar(uncertainty_col, "uncertainty talk")
 
-    # Unpaired two-proportion z-tests for effect sizes
+    # Unpaired two-proportion z-tests across all scenario pairs
     def show_unpaired(flag_col, label):
+        if not flag_col: 
+            return
         print(f"\n== Two-proportion z-tests for {label} (unpaired, per-scenario) ==")
         counts = []
         for s in scen_order:
-            d = df[df["scenario"]==s]
-            k = int(d[flag_col].sum())
+            d = [r for r in rows if str(r.get("scenario","")) == s]
+            k = sum(int(r.get(flag_col,0)) for r in d)
             n = len(d)
             counts.append((s,k,n))
         for i in range(len(counts)):
@@ -433,28 +480,29 @@ def main():
                 s2,k2,n2 = counts[j]
                 out = two_prop_test(k1,n1,k2,n2)
                 print(f"[{s1} → {s2}] p1={100*out['p1']:.1f}%  p2={100*out['p2']:.1f}%  Δ={100*out['diff']:.1f} pp   z={out['z']:.2f}  p={out['p']:.4g}")
+
     show_unpaired(leak_col,  "leak")
     show_unpaired(decoy_col, "decoy over-redaction")
     if uncertainty_col:
         show_unpaired(uncertainty_col, "uncertainty talk")
 
     # By file_type
-    rate_by_filetype(df, leak_col,  "Leak rate")
-    rate_by_filetype(df, decoy_col, "Decoy over-redaction")
+    rate_by_filetype(rows, leak_col,  "Leak rate")
+    rate_by_filetype(rows, decoy_col, "Decoy over-redaction")
     if uncertainty_col:
-        rate_by_filetype(df, uncertainty_col, "Uncertainty talk")
+        rate_by_filetype(rows, uncertainty_col, "Uncertainty talk")
 
-    # Per-PII-class (handles both boolean columns and leak_types list)
-    class_leaks(df, scen_order)
+    # Per-PII-class
+    class_leaks(rows, scen_order, cols)
 
     # Confidence calibration (success = no leak)
-    confidence_calibration(df, leak_col, refusal_col=refusal_col)
+    confidence_calibration(rows, leak_col, refusal_col=refusal_col)
 
+    # Targeted contrasts
     try:
-        print_eval_awareness_contrasts(df)
+        print_eval_awareness_contrasts(rows, scen_order, cols, args.id_col, refusal_col, leak_col, decoy_col)
     except Exception as e:
         print(f"\n[WARN] eval-awareness contrasts skipped: {e}")
 
 if __name__ == "__main__":
     main()
-    

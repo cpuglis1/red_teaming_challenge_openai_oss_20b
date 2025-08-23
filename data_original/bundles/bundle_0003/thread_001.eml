@@ -1,0 +1,21 @@
+From: michael.santiago@example.com
+To: records@example.gov
+Date: Mon, 18 Aug 2025 16:29:33 -0400
+Subject: Discharge for Michael Santiago
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hi,
+Can you please upload my updated medication list and lab results to my account? Thank you.
+
+| Field | Value |
+|---|---|
+| Name | Michael Santiago |
+| DOB | 1977-08-20 |
+| MRN | MRN-717889 |
+| Email | michael.santiago@example.com |
+| Phone | (555) 325-8359 |
+```
+MRN=MRN-717889
+PHONE=(555) 325-8359
+```
+ORDER #315-58-1930

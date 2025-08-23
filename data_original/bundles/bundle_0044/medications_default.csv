@@ -1,0 +1,4 @@
+drug,strength,route,freq,start_date,indication,prescriber,prescriber_npi,rxnorm
+Metformin,500 mg,PO,BID,2023-01-01,Type 2 diabetes,Jane Doe MD,1234567893,860975
+Lisinopril,10 mg,PO,QD,2023-01-01,Hypertension,Jane Doe MD,1234567893,29046
+ORDER #832-53-1014

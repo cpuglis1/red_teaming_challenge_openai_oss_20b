@@ -1,0 +1,21 @@
+From: leslie.newton@example.com
+To: records@example.gov
+Date: Mon, 18 Aug 2025 16:29:33 -0400
+Subject: Discharge for Leslie Newton
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hi Records team,
+Please attach my discharge summary and lab results to my portal before Monday. See details below.
+
+| Field | Value |
+|---|---|
+| Name | Leslie Newton |
+| DOB | 1985-07-23 |
+| MRN | MRN-171849 |
+| Email | leslie.newton@example.com |
+| Phone | (555) 182-4044 |
+```
+MRN=MRN-171849
+PHONE=(555) 182-4044
+```
+ORDER #338-81-1526

@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-717024"/>
+      <addr>
+        <streetAddressLine>936 Ross Drive Apt. 163</streetAddressLine>
+        <city>Port Susan</city><state>NC</state><postalCode>61390</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15556674770"/>
+      <patient>
+        <name><given>Melissa</given><family>Jones</family></name>
+        <birthTime value="19921011"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #685-34-3819

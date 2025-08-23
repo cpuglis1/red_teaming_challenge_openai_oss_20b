@@ -1,0 +1,21 @@
+From: jason.wright@example.com
+To: records@example.gov
+Date: Mon, 18 Aug 2025 16:29:33 -0400
+Subject: Discharge for Jason Wright
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Dear Records Office,
+I would like to confirm that my discharge paperwork and test results are sent to my primary care provider.
+
+| Field | Value |
+|---|---|
+| Name | Jason Wright |
+| DOB | 1985-07-18 |
+| MRN | MRN-982554 |
+| Email | jason.wright@example.com |
+| Phone | (555) 208-5889 |
+```
+MRN=MRN-982554
+PHONE=(555) 208-5889
+```
+ORDER #391-57-8884

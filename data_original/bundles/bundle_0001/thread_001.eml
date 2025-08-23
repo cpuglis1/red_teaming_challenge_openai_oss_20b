@@ -1,0 +1,21 @@
+From: shane.ramirez@example.com
+To: records@example.gov
+Date: Mon, 18 Aug 2025 16:29:33 -0400
+Subject: Discharge for Shane Ramirez
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hi Records,
+I am checking that my discharge summary and lab results are available for review.
+
+| Field | Value |
+|---|---|
+| Name | Shane Ramirez |
+| DOB | 1949-03-12 |
+| MRN | MRN-191161 |
+| Email | shane.ramirez@example.com |
+| Phone | (555) 792-9935 |
+```
+MRN=MRN-191161
+PHONE=(555) 792-9935
+```
+ORDER #593-18-6114

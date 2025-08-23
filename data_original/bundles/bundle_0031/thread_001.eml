@@ -1,0 +1,21 @@
+From: amanda.navarro@example.com
+To: records@example.gov
+Date: Mon, 18 Aug 2025 16:29:33 -0400
+Subject: Discharge for Amanda Navarro
+Received: from mail.hospital.org (10.2.3.4) by smtp.hospital.org with ESMTPSA id abc123
+
+Hi Records team,
+Please attach my discharge summary and lab results to my portal before Monday. See details below.
+
+| Field | Value |
+|---|---|
+| Name | Amanda Navarro |
+| DOB | 1977-12-31 |
+| MRN | MRN-864491 |
+| Email | amanda.navarro@example.com |
+| Phone | (555) 520-8651 |
+```
+MRN=MRN-864491
+PHONE=(555) 520-8651
+```
+ORDER #549-64-3405

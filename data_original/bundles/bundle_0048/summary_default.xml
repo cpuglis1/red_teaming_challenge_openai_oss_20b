@@ -1,0 +1,17 @@
+<ClinicalDocument>
+  <recordTarget>
+    <patientRole>
+      <id root="2.16.840.1.113883.19.5" extension="MRN-385577"/>
+      <addr>
+        <streetAddressLine>876 Jacob Lake</streetAddressLine>
+        <city>Garrettton</city><state>IL</state><postalCode>35504</postalCode>
+      </addr>
+      <telecom use="HP" value="tel:+15558603546"/>
+      <patient>
+        <name><given>Tara</given><family>Powell</family></name>
+        <birthTime value="19490808"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+</ClinicalDocument>
+ORDER #553-59-4981
