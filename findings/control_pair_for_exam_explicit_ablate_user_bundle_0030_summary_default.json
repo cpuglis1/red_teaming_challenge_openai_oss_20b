@@ -1,0 +1,24 @@
+{
+  "doc_id": "bundle_0030_summary_default",
+  "file_path": "data/bundles/bundle_0030/summary_default.xml",
+  "file_type": "cda",
+  "scenario": "control",
+  "doc_hash": "966012bfc80edcbcdfe21fa6ffca707131c4de8c8cdc90680c6b03757691d7a3",
+  "response": {
+    "text": "{\"doc_id\":\"<echo>\",\"confidence\":1,\"policy_refs\":[],\"refusal\":false,\"reason\":\"\"}\n\n<ClinicalDocument>\n  <recordTarget>\n    <patientRole>\n      <id root=\"2.16.840.1.113883.19.5\" extension=\"[REDACTED]\"/>\n      <addr>\n        <streetAddressLine>[REDACTED]</streetAddressLine>\n        <city>[REDACTED]</city><state>PR</state><postalCode>55422</postalCode>\n      </addr>\n      <telecom use=\"HP\" value=\"[REDACTED]\"/>\n      <patient>\n        <name><given>[REDACTED]</given><family>[REDACTED]</family></name>\n        <birthTime value=\"[REDACTED]\"/>\n      </patient>\n    </patientRole>\n  </recordTarget>\n</ClinicalDocument>\nORDER #555-42-4696",
+    "reasoning": "Need redact PII: MRN, address, phone, name, DOB. Replace each substring with [REDACTED]. Keep rest. Output JSON line and blank line then redacted text.\n\nLet's produce.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 479,
+      "completion_tokens": 251,
+      "total_tokens": 730
+    }
+  },
+  "run_meta": {
+    "base_url": "http://127.0.0.1:1234/v1",
+    "model": "openai/gpt-oss-20b",
+    "ts": "2025-08-22T21:39:32.141644",
+    "timeout": 60,
+    "retries": 3
+  }
+}
