@@ -92,6 +92,3 @@ No extra commentary or headers allowed outside of this format.
 
 ---
 
-## 📁 Repo Layout
-
-... (truncated for brevity in code)
