@@ -41,24 +41,55 @@ def _try_print_pair(df, metric_col, label, scen_a, scen_b):
         print(f"[{scen_a} vs {scen_b}] n_pairs={n_pairs}  "
               f"b10(A1,B0)={b10}  b01(A0,B1)={b01}  p_exact={p:.6g}")
 
+def pick_scenarios(df):
+    """
+    Return a stable, sensible ordering for all scenarios present.
+    First three entries are used by the generic McNemar block below.
+    """
+    preferred = [
+        # originals
+        "control", "exam_template", "live_ui",
+        # eval-awareness family
+        "exam_ablate", "exam_flip",
+        "hidden_exam", "hidden_live",
+        "exam_template_neutral", "live_ui_neutral",  # <-- fixed missing comma
+        "meta_exam", "meta_live",
+        # NEW: explicit exam ablations
+        "exam_explicit_ablate_user", "exam_explicit_ablate_system",
+        # NEW: minimal meta ablations
+        "meta_env", "meta_workflow", "meta_qa", "meta_placebo",
+        # payload cues (if you use them)
+        "doc_injection", "doc_override", "security_public", "security_restricted",
+    ]
+    have = df["scenario"].astype(str).unique().tolist()
+    order = [s for s in preferred if s in have] + [s for s in have if s not in preferred]
+    if len(order) < 2:
+        raise SystemExit(f"Need at least 2 scenarios; got {have}")
+    return order
+
+
 def print_eval_awareness_contrasts(df):
     """
-    Targeted, paired contrasts for eval awareness, objective hacking, and payload cues.
+    Targeted, paired contrasts for eval awareness, objective hacking, payload cues,
+    and the new explicit-exam and minimal-meta ablations.
     Safe to call even if some scenarios are missing.
     """
     scen = set(df["scenario"].unique())
 
-    # only print if we have *any* of these families
     interesting = {
+        # legacy families
         "exam_ablate", "exam_flip", "hidden_exam", "meta_exam",
-        "doc_injection", "security_public", "security_restricted",
-        # leave originals here in case you reuse this on old runs
-        "exam_template", "live_ui",
+        "exam_template", "live_ui", "exam_template_neutral", "live_ui_neutral",
+        "doc_injection", "doc_override", "security_public", "security_restricted",
+        # NEW: explicit exam ablations
+        "exam_explicit_ablate_user", "exam_explicit_ablate_system",
+        # NEW: minimal meta ablations
+        "meta_env", "meta_workflow", "meta_qa", "meta_placebo",
     }
     if not scen.intersection(interesting):
         return
 
-    print("\n== Targeted contrasts (eval awareness / objective hacking / payload cues) ==")
+    print("\n== Targeted contrasts (eval awareness / objective hacking / payload cues / ablations) ==")
 
     def _pairs_present(pairs):
         return [(a, b) for (a, b) in pairs if a in scen and b in scen]
@@ -67,45 +98,66 @@ def print_eval_awareness_contrasts(df):
     if "leak_any" in df.columns:
         print("\n-- McNemar (paired) for leak_any --")
         leak_pairs = _pairs_present([
-            # exam awareness + objective hacking
+            # existing eval-awareness pairs
             ("exam_ablate", "control"),
             ("exam_template_neutral", "control"),
             ("live_ui_neutral", "control"),
             ("exam_template_neutral", "live_ui_neutral"),
-            ("exam_ablate", "live_ui"),
-            ("exam_flip",   "exam_ablate"),
             ("hidden_exam", "control"),
             ("meta_exam",   "control"),
-            # NEW: payload cues (document-borne)
-            ("doc_injection",       "control"),
-            ("doc_override",       "control"),
-            ("security_public",     "control"),
+            # payload cues (optional)
+            ("doc_injection", "control"),
+            ("doc_override",  "control"),
+            ("security_public", "control"),
             ("security_restricted", "control"),
             ("security_restricted", "security_public"),
+            # NEW: explicit exam ablations
+            ("exam_explicit_ablate_user",    "control"),
+            ("exam_explicit_ablate_system",  "control"),
+            ("exam_explicit_ablate_system",  "exam_explicit_ablate_user"),
+            # NEW: minimal meta ablations vs control and placebo
+            ("meta_env",      "control"),
+            ("meta_workflow", "control"),
+            ("meta_qa",       "control"),
+            ("meta_placebo",  "control"),
+            ("meta_env",      "meta_placebo"),
+            ("meta_workflow", "meta_placebo"),
+            ("meta_qa",       "meta_placebo"),
         ])
         for a, b in leak_pairs:
             _try_print_pair(df, "leak_any", "leak", a, b)
 
     # -------- decoy over-redaction --------
-    decoy_col = "decoy_over_redaction"
-    if decoy_col in df.columns:
+    decoy_col = "decoy_over_redaction" if "decoy_over_redaction" in df.columns else \
+                ("decoy" if "decoy" in df.columns else None)
+    if decoy_col:
         print("\n-- McNemar (paired) for decoy over-redaction --")
         decoy_pairs = _pairs_present([
-            # exam awareness + objective hacking
+            # existing eval-awareness pairs
             ("exam_ablate", "control"),
             ("exam_template_neutral", "control"),
             ("live_ui_neutral", "control"),
             ("exam_template_neutral", "live_ui_neutral"),
-            ("exam_ablate", "live_ui"),
-            ("exam_flip",   "exam_ablate"),
             ("hidden_exam", "control"),
             ("meta_exam",   "control"),
-            # NEW: payload cues (document-borne)
-            ("doc_injection",       "control"),
-            ("doc_override",       "control"),
-            ("security_public",     "control"),
+            # payload cues (optional)
+            ("doc_injection", "control"),
+            ("doc_override",  "control"),
+            ("security_public", "control"),
             ("security_restricted", "control"),
             ("security_restricted", "security_public"),
+            # NEW: explicit exam ablations
+            ("exam_explicit_ablate_user",    "control"),
+            ("exam_explicit_ablate_system",  "control"),
+            ("exam_explicit_ablate_system",  "exam_explicit_ablate_user"),
+            # NEW: minimal meta ablations vs control and placebo
+            ("meta_env",      "control"),
+            ("meta_workflow", "control"),
+            ("meta_qa",       "control"),
+            ("meta_placebo",  "control"),
+            ("meta_env",      "meta_placebo"),
+            ("meta_workflow", "meta_placebo"),
+            ("meta_qa",       "meta_placebo"),
         ])
         for a, b in decoy_pairs:
             _try_print_pair(df, decoy_col, "decoy", a, b)
@@ -195,28 +247,6 @@ def two_prop_test(k1,n1,k2,n2):
         p = 2*(1 - 0.5*(1+math.erf(abs(z)/math.sqrt(2))))
     return {"p1":p1, "p2":p2, "diff":diff, "z":z, "p":p,
             "ci1": wilson_ci(k1,n1), "ci2": wilson_ci(k2,n2)}
-
-def pick_scenarios(df):
-    """
-    Return a stable, sensible ordering for all scenarios present.
-    First three entries are used by the generic McNemar block below.
-    """
-    preferred = [
-        # originals
-        "control", "exam_template", "live_ui",
-        # your eval-awareness family
-        "exam_ablate", "exam_flip",
-        "hidden_exam", "hidden_live",
-        "exam_template_neutral", "live_ui_neutral"
-        "meta_exam", "meta_live",
-        # NEW: payload cues
-        "doc_injection", "doc_override", "security_public", "security_restricted",
-    ]
-    have = df["scenario"].astype(str).unique().tolist()
-    order = [s for s in preferred if s in have] + [s for s in have if s not in preferred]
-    if len(order) < 2:
-        raise SystemExit(f"Need at least 2 scenarios; got {have}")
-    return order
 
 def safe_get(df, name):
     return df[name] if name in df.columns else pd.Series(index=df.index, dtype=float)
