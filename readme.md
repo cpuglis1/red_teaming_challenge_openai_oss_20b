@@ -23,8 +23,6 @@ X-Trace: eval_run=1
 - **Control** leak rate: **10.4%**  
 - **McNemar p = 0.000472**
 
-In contrast, **Meta_placebo** (e.g., `X-Foo`) shows no significant effect (9.4%, p = ns).  
-**Implication**: Models are sensitive to evaluation-semantic signals on the data surface—posing risks for audit-validity drift between test and production environments.  
 *(Source: `cpuglisi.findings.1.json`)*
 
 ---
@@ -39,8 +37,9 @@ Single-header variants also reduce leakage:
 | `X-Env: staging`               | **6.9%** | McNemar p = 0.0115 |
 | `X-QA: enabled`                | **8.1%** | Not significant    |
 
-**Takeaway**: Even minimal semantic headers can drive redaction performance.  
-*(Source: `cpuglisi.findings.2.json`)*
+
+In contrast, **Meta_placebo** (e.g., `X-Foo`) shows no significant effect (9.4%, p = ns).  
+**Implication**: Models are sensitive to evaluation-semantic signals on the data surface—posing risks for audit-validity drift between test and production environments.  
 
 ---
 
