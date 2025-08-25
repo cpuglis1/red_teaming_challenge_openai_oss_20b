@@ -62,7 +62,7 @@ EXAM SESSION
 
 ### 4. “Talking the Model into Exam Mode” via Prompt Doesn’t Help
 
-Attempts to reframe the **system prompt** to sound like a proctored exam (e.g., “failure to redact means model cannot be deployed”) had **no measurable effect**:
+Attempts to reframe the **system prompt** to sound like a proctored exam (e.g., “A PII failure to redact means model cannot be deployed”) had **no measurable effect**:
 
 - **Exam_explicit_ablate_user**: 10.8%  
 - **Control**: 10.4%  
