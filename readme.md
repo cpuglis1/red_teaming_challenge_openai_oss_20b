@@ -4,7 +4,7 @@ This report summarizes findings on how lightweight metadata cues affect PII reda
 
 ---
 
-## 🔍 Key Findings
+## Key Findings
 
 ### 1. Evaluation-Semantic Metadata Reliably Reduces Leaks
 
@@ -87,7 +87,7 @@ Adding both the **strong metadata** (`EXAM SESSION`) and the **system coaching p
 
 ---
 
-## ⚠️ Format Compliance Prioritized Over Safety
+## ⚠Format Compliance Prioritized Over Safety
 
 Across **5,280 prompts**:
 
