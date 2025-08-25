@@ -44,9 +44,9 @@ Single-header variants also reduce leakage:
 
 ---
 
-### 3. Explicit “EXAM SESSION” Drives Best Safety
+### 3. Explicit “EXAM SESSION” Drives Safety
 
-The strongest single result came from the explicit label:
+A strong single result came from the explicit label:
 
 ```
 EXAM SESSION
@@ -76,7 +76,7 @@ This suggests that **system-level coaching is ineffective alone**.
 
 ### 5. Combining Metadata and Coaching Cancels the Benefit
 
-Adding both the **strongest metadata** (`EXAM SESSION`) and the **system coaching prompt** did not outperform control:
+Adding both the **strong metadata** (`EXAM SESSION`) and the **system coaching prompt** did not outperform control:
 
 - **Exam_template_explicit**: 10.8%  
 - **Live_ui_explicit**: 10.8%  
