@@ -39,7 +39,8 @@ Single-header variants also reduce leakage:
 
 
 In contrast, **Meta_placebo** (e.g., `X-Foo`) shows no significant effect (9.4%, p = ns).  
-**Implication**: Models are sensitive to evaluation-semantic signals on the data surface—posing risks for audit-validity drift between test and production environments.  
+**Implication**: Models are sensitive to evaluation-semantic signals on the data surface—posing risks for audit-validity drift between test and production environments.
+
 *(Source: `cpuglisi.findings.2.json`)*
 ---
 
