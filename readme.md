@@ -42,6 +42,7 @@ In contrast, **Meta_placebo** (e.g., `X-Foo`) shows no significant effect (9.4%,
 **Implication**: Models are sensitive to evaluation-semantic signals on the data surface—posing risks for audit-validity drift between test and production environments.
 
 *(Source: `cpuglisi.findings.2.json`)*
+
 ---
 
 ### 3. Explicit “EXAM SESSION” Drives Safety
