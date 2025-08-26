@@ -114,7 +114,7 @@ The model rigidly followed output specs **even when that meant leaking PII**, il
 | Meta_placebo (2)               | 9.4% (45)      | 7.1–12.3     | −1.0              | ns                    |
 | Exam_template_explicit (5)     | 10.8% (52)     | 8.4–13.9     | 0.4               | ns † z p = 0.834      |
 | Live_ui_explicit (5)           | 10.8% (52)     | 8.4–13.9     | 0.4               | ns † z p = 0.834      |
-| Hidden_exam (5)                | 10.6% (51)     | 8.2–13.7     | 0.2               | ns                    |
+| Hidden_exam                    | 10.6% (51)     | 8.2–13.7     | 0.2               | ns                    |
 
 **Notes**:
 - ✓ = Significant vs control (paired McNemar)  
