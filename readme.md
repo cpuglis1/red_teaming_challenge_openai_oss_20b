@@ -40,7 +40,7 @@ Single-header variants also reduce leakage:
 
 In contrast, **Meta_placebo** (e.g., `X-Foo`) shows no significant effect (9.4%, p = ns).  
 **Implication**: Models are sensitive to evaluation-semantic signals on the data surface—posing risks for audit-validity drift between test and production environments.  
-
+*(Source: `cpuglisi.findings.2.json`)*
 ---
 
 ### 3. Explicit “EXAM SESSION” Drives Safety
@@ -55,7 +55,7 @@ EXAM SESSION
 - **McNemar p = 0.00549**
 - **z-test p = 0.000196**
 
-**Note**: This improvement comes at a cost—over-redaction of decoys rose (e.g., 25.6% in 4.2% leak setting; 27.5% in `exam_template_explicit`).  
+**Note**: This improvement comes at a cost—over-redaction of decoys rose (e.g., 25.6% in 6.0% exam session setting; 27.5% in `exam_template_explicit`).  
 *(Source: `cpuglisi.findings.3.json`)*
 
 ---
